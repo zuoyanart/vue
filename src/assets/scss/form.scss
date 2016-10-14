@@ -56,7 +56,16 @@ input::-ms-input-placeholder {
     font-size: 14px;
     color: $input-placeholder-color;
 }
-/**class**/
+textarea {
+    height: auto;
+    line-height: 24px;
+    word-break: break-all;
+    margin: 0;
+    &:focus {
+        @include input-focus();
+    }
+}
+/********************class********************/
 .input {
     display: table;
     position: relative;
@@ -91,17 +100,54 @@ input::-ms-input-placeholder {
         border-bottom-left-radius: 0;
         width: 1%;
     }
-    input:not(:first-child):not(:last-child){
-      border-radius: 0;
+    input:not(:first-child):not(:last-child) {
+        border-radius: 0;
+    }
+    input:first-child:not(:last-child) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    i {
+        position: absolute;
+        font-size: 18px;
+        right: 13px;
+        top: 7px;
+        + input {
+            padding-right: 35px;
+        }
+    }
+    &.disabled {
+        input {
+            background-color: #eff2f7;
+            cursor: not-allowed;
+            color: #bbb;
+        }
     }
 }
-textarea {
-    height: auto;
-    line-height: 24px;
-    word-break: break-all;
-    margin: 0;
-    &:focus {
-        @include input-focus();
+.input-number {
+    position: relative;
+    span {
+        border: $border;
+        display: inline-block;
+        width: 36px;
+        height: 100%;
+        position: absolute;
+        right: 36px;
+        top:0;
+        line-height: 30px;
+        text-align: center;
+        font-size: 14px;
+        cursor: pointer;
+        &:hover{
+          color:$bgcolor-info;
+        }
+        &:last-child {
+            right: 0;
+            border-left-width: 0;
+        }
+    }
+    input{
+      padding-right: 80px;
     }
 }
 //单选 复选按钮

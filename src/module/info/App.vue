@@ -53,6 +53,14 @@
       <template slot="prepend">http:\\</template>
       <template slot="append">.com</template>
     </pzinput>
+    <br><br>
+    <pzinput placeholder="请输入网址" type="email" id="input5" value="" icon="user-md"></pzinput>
+    <br><br>
+    <pzinput placeholder="请输入网址" type="email" id="input5" value="不可用" icon="user-md" :disabled="true"></pzinput>
+    <h2>数字按钮</h2>
+    <pzinputnumber></pzinputnumber>
+    <br><br>
+    <pzinputnumber :disabled="true"></pzinputnumber>
 </div>
 
 </template>
@@ -62,12 +70,14 @@
 import pzbutton from '../../components/button/index';
 import pzcheckbox from '../../components/Checkbox.vue';
 import pzinput from '../../components/input/index';
+import pzinputnumber from '../../components/input-number/index';
 
 export default {
     components: {
         pzbutton,
         pzcheckbox,
-        pzinput
+        pzinput,
+        pzinputnumber,
     }
 }
 

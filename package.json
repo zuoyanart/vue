@@ -13,6 +13,7 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
+    "layer-dialog": "^2.1.0",
     "vue": "^2.0.1"
   },
   "devDependencies": {
@@ -67,6 +68,7 @@
     "sass-loader": "^4.0.2",
     "scss-loader": "^0.0.1",
     "selenium-server": "2.53.1",
+    "send": "^0.14.1",
     "shelljs": "^0.7.4",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
