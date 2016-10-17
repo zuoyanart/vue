@@ -35,7 +35,7 @@
     <pzbutton icon="user-md" btn="info" size="block">一般信息</pzbutton>
     <pzbutton btn="danger" :loading="true" size="block">危险</pzbutton>
     <h2>复选</h2>
-    <pzcheckbox name="c1" value="1" :checked="true">好吧</pzcheckbox>
+    <pzcheckbox name="c1" value="1" checked="true">好吧</pzcheckbox>
     <pzcheckbox name="c1" value="2">sdf</pzcheckbox>
     <pzcheckbox name="c1" value="3">sdf</pzcheckbox>
     <pzcheckbox name="c1" value="4" :disabled="true">不可用</pzcheckbox>
@@ -63,7 +63,7 @@
     <br><br>
     <!-- <pzinputnumber :disabled="true"></pzinputnumber> -->
     <h2>单选</h2>
-    <pzradio name="t1" value="0" :checked="true">选项1</pzradio>
+    <pzradio name="t1" value="0" checked="true">选项1</pzradio>
     <pzradio name="t1" value="1">选项2</pzradio>
     <pzradio name="t1" value="2">选项3</pzradio>
     <pzradio name="t1" value="3" :disabled="true">禁用</pzradio>
@@ -75,11 +75,11 @@
       <pz-formitem label="及时配送"><pzinput></pzinput></pz-formitem>
 
       <pz-formitem label="活动性质">
-        <pz-checkboxgroup v-model="form.xz"><pzcheckbox name="form1" value="1" :checked="true">美食</pzcheckbox><pzcheckbox name="form1" value="2" >地推活动</pzcheckbox><pzcheckbox name="form1" value="3">线下活动</pzcheckbox><pzcheckbox name="form1" value="4">品牌活动</pzcheckbox>
+        <pz-checkboxgroup v-model="form.xz"><pzcheckbox name="form1" value="1" checked="true">美食</pzcheckbox><pzcheckbox name="form1" value="2" checked="true">地推活动</pzcheckbox><pzcheckbox name="form1" value="3" checked="true">线下活动</pzcheckbox><pzcheckbox name="form1" value="4" checked="true">品牌活动</pzcheckbox>
         </pz-checkboxgroup>
         </pz-formitem>
 
-      <pz-formitem label="特殊资源"><pzradio name="formradio" value="1" :checked="true" v-model="form.time">线上品牌商赞助</pzradio><pzradio name="formradio" value="2">线上品牌商赞助</pzradio></pz-formitem>
+      <pz-formitem label="特殊资源"><pz-radiogroup v-model="form.zy"><pzradio name="formradio" value="1" checked="true" v-model="form.time">线上品牌商赞助</pzradio><pzradio name="formradio" value="2">线上品牌商赞助</pzradio></pz-radiogroup></pz-formitem>
 
       <pz-formitem label="活动形式"><pzinput></pzinput></pz-formitem>
       <pz-formitem><pzbutton type="submit">提交</pzbutton></pz-formitem>
@@ -99,6 +99,7 @@ import pzradio from '../../components/radio/index';
 import pzform from '../../components/form/index';
 import pzformitem from '../../components/form-item/index';
 import pzcheckboxgroup from '../../components/checkbox-group/index';
+import pzradiogroup from '../../components/radio-group/index';
 
 export default {
   data(){
@@ -107,7 +108,8 @@ export default {
         name:'',
         area:"",
         time:"",
-        xz:[]
+        xz:[],
+        zy:""
       }
     }
   },
@@ -119,7 +121,11 @@ export default {
         pzradio,
         "pz-form":pzform,
         "pz-formitem":pzformitem,
-        "pz-checkboxgroup":pzcheckboxgroup
+        "pz-checkboxgroup":pzcheckboxgroup,
+        "pz-radiogroup":pzradiogroup,
+    },
+    methods:{
+      
     }
 }
 
