@@ -175,10 +175,15 @@ input[type="radio"] {
     line-height: 33px!important;
 }
 //checkbox css
-.checkgroup {
+.checkbox {
     vertical-align: baseline;
+    display: inline;
+    margin-right: 10px;
     & > input {
         display: none;
+    }
+    label{
+      cursor: pointer;
     }
     & > input + label {
         background-color: #fafafa;
@@ -190,56 +195,74 @@ input[type="radio"] {
         position: relative;
         vertical-align: middle;
         margin-right: 5px;
-        cursor: pointer;
+        margin-top: -4px;
         line-height: 16px!important;
     }
     & > input:checked + label::after {
-        font-family: "iconfont" !important;
+        font-family: "FontAwesome";
         color: #99a1a7;
-        content: "\e605";
-        font-size: 20px;
-        left: -4px;
+        content: "\f00c";
+        font-size: 14px;
+        left: 0px;
+        top:-1px;
         position: absolute;
-        top: 0;
+    }
+    &.disabled{
+      label{
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
     }
 }
 //radiobox css
-.radiogroup {
+.radio {
+   display: inline;
+   margin-right: 10px;
     & > input {
         display: none;
-    };
+    }
+    & > label{
+      cursor: pointer;
+    }
     & > input + label {
         background-color: #fafafa;
-        border: 1px solid #cacece;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 -15px 10px -12px rgba(0, 0, 0, 0.05) inset;
+        border: 1px solid #c0ccda;
         display: inline-block;
         padding: 9px;
         position: relative;
-        border-radius: 50px;
+        border-radius: 50%;
         margin-right: 5px;
         vertical-align: middle;
-        cursor: pointer;
+        margin-top: -4px;
+    }
+    & > input:checked + label{
+      background-color: $bgcolor-info;
+      border-color: $bgcolor-info;
     }
     & > input:checked + label::after {
-        background: #99a1a7;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) inset;
+        background-color: #fff;
         border-radius: 50px;
         color: #99a1a7;
-        content: " ";
-        font-size: 14px;
-        left: 3px;
+        content: "";
+        font-size: 10px;
+        left: 5px;
         position: absolute;
-        top: 3px;
-        height: 12px;
-        width: 12px;
+        top: 5px;
+        height: 8px;
+        width: 8px;
+    }
+    &.disabled{
+      label{
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
     }
 }
 //单行显示
-.form,
-form {
+.pz-form{
     & > div {
         position: relative;
-        margin-top: 10px;
+        margin-top: 20px;
         padding: 0 0 0 100px;
         & > label {
             display: inline-block;
@@ -250,7 +273,6 @@ form {
             left: 0;
             text-align: right;
             padding-right: 10px;
-            font-weight: bold;
             margin-bottom: 5px;
         }
         & > label.checkgroup,
