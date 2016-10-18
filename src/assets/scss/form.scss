@@ -260,10 +260,27 @@ input[type="radio"] {
 }
 //单行显示
 .pz-form{
-    & > div {
+    & > div.form-item {
         position: relative;
         margin-top: 20px;
         padding: 0 0 0 100px;
+        &.form-iserror{
+          input,.checkbox-group,.radio-group{
+            border:1px solid $bgcolor-danger;
+          }
+        }
+        .validate-tip{
+          position:absolute;
+          top:-30px;
+          background-color: $bgcolor-warning;
+          color: #fff;
+          border-radius: 4px;
+          padding: 3px 5px;
+          &.validate-tip-err{
+            background-color: $bgcolor-danger;
+          }
+          min-height: 20px;
+        }
         & > label {
             display: inline-block;
             width: 100px;

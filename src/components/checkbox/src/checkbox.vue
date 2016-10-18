@@ -51,6 +51,8 @@ export default {
         },
         methods: {
             chanegHandel: function(event) {
+              console.log(this.$parent._events);
+              console.log(this.$parent._events['b']);
                 this._value = event.target.value;
                 this.$parent.$emit('checkChange', this._value, event.target.checked);
             }

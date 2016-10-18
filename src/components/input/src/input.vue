@@ -8,9 +8,9 @@
       <slot name="prepend"></slot>
     </div>
     <i :class="'icon-' + icon" v-if="icon !== ''"></i>
-    <input v-if="type==='text'" type="text" :name="id" :value="value" :id="id" :placeholder="placeholder" :disabled="disabled" v-model="currentValue" @blur="handleBlur" v-on:input="input">
-    <input v-if="type==='email'" type="email" :name="id" :value="value" :id="id" :placeholder="placeholder" :disabled="disabled" v-model="currentValue">
-    <input v-if="type==='number'" type="number" :name="id" :value="value" :id="id" :placeholder="placeholder" :disabled="disabled" v-model="currentValue">
+    <input v-if="type==='text'" type="text" :name="id" :value="value" :id="id" :placeholder="placeholder" :disabled="disabled"  @change="handleChange" @blur="handleChange" @focus="handleFocus" @input="input">
+    <input v-if="type==='email'" type="email" :name="id" :value="value" :id="id" :placeholder="placeholder" :disabled="disabled" >
+    <input v-if="type==='number'" type="number" :name="id" :value="value" :id="id" :placeholder="placeholder" :disabled="disabled" >
     <div class="input-append" v-if="$slots.append">
       <slot name="append"></slot>
     </div>
@@ -53,14 +53,17 @@ export default {
         computed: {},
         mounted() {},
         methods: {
-          handleBlur(event) {
-            // this.$emit('onblur', this.currentValue);
-            // this.$parent.$data.form["name"] =this.currentValue;
+          handleChange(event) {
+            this.$parent.$emit('pz.form.change', event.target.value);
+          },
+          handleFocus(event) {
+            this.$parent.$emit('pz.form.focus');
           },
           input(event) {
-            this.$emit('input', this.currentValue)
+            this.$emit('input', event.target.value);
           }
         },
+        watch: {},
         components: {}
 }
 

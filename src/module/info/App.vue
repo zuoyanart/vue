@@ -67,22 +67,40 @@
     <pzradio name="t1" value="1">选项2</pzradio>
     <pzradio name="t1" value="2">选项3</pzradio>
     <pzradio name="t1" value="3" :disabled="true">禁用</pzradio>
+
+    <br><br><hr><br><br>
     <h2>表单</h2>
-    <pz-form>
-      <pz-formitem label="活动名称"><pzinput v-model="form.name"></pzinput></pz-formitem>
-      <pz-formitem label="活动区域"><pzinput v-model="form.area"></pzinput></pz-formitem>
-      <pz-formitem label="活动时间"><pzinput v-model="form.time"></pzinput></pz-formitem>
-      <pz-formitem label="及时配送"><pzinput></pzinput></pz-formitem>
-
+    <pz-form ref="form">
+      <pz-formitem label="活动名称" :validate="rules.name">
+        <pzinput v-model="form.name" placeholder="请输入活动名称"></pzinput>
+      </pz-formitem>
+      <pz-formitem label="活动区域" :validate="rules.area">
+        <pzinput v-model="form.area" placeholder="请输入活动区域"></pzinput>
+      </pz-formitem>
+      <pz-formitem label="活动时间" :validate="rules.time">
+        <pzinput v-model="form.time"></pzinput>
+      </pz-formitem>
+      <pz-formitem label="及时配送" :validate="rules.ps">
+        <pzinput v-model="form.ps"></pzinput>
+      </pz-formitem>
       <pz-formitem label="活动性质">
-        <pz-checkboxgroup v-model="form.xz"><pzcheckbox name="form1" value="1" checked="true">美食</pzcheckbox><pzcheckbox name="form1" value="2" checked="true">地推活动</pzcheckbox><pzcheckbox name="form1" value="3" checked="true">线下活动</pzcheckbox><pzcheckbox name="form1" value="4" checked="true">品牌活动</pzcheckbox>
+        <pz-checkboxgroup v-model="form.xz">
+          <pzcheckbox name="form1" value="1" checked="true">美食</pzcheckbox>
+          <pzcheckbox name="form1" value="2" checked="true">地推活动</pzcheckbox>
+          <pzcheckbox name="form1" value="3" checked="true">线下活动</pzcheckbox>
+          <pzcheckbox name="form1" value="4" checked="true">品牌活动</pzcheckbox>
         </pz-checkboxgroup>
-        </pz-formitem>
-
-      <pz-formitem label="特殊资源"><pz-radiogroup v-model="form.zy"><pzradio name="formradio" value="1" checked="true" v-model="form.time">线上品牌商赞助</pzradio><pzradio name="formradio" value="2">线上品牌商赞助</pzradio></pz-radiogroup></pz-formitem>
-
-      <pz-formitem label="活动形式"><pzinput></pzinput></pz-formitem>
-      <pz-formitem><pzbutton type="submit">提交</pzbutton></pz-formitem>
+      </pz-formitem>
+      <pz-formitem label="特殊资源">
+        <pz-radiogroup v-model="form.zy">
+          <pzradio name="formradio" value="1" checked="true" v-model="form.time">线上品牌商赞助</pzradio>
+          <pzradio name="formradio" value="2">线上品牌商赞助</pzradio>
+        </pz-radiogroup>
+      </pz-formitem>
+      <pz-formitem label="活动形式" :validate="rules.xs">
+        <pzinput v-model="form.xs"></pzinput>
+      </pz-formitem>
+      <pz-formitem><pzbutton  @click.native="submitHandle">提交</pzbutton></pz-formitem>
       {{form}}
     </pz-form>
 </div>
@@ -91,6 +109,7 @@
 
 <script>
 
+import validate from './tools/validate.js';
 import pzbutton from '../../components/button/index';
 import pzcheckbox from '../../components/checkbox/index';
 import pzinput from '../../components/input/index';
@@ -109,7 +128,18 @@ export default {
         area:"",
         time:"",
         xz:[],
-        zy:""
+        zy:"",
+        ps:"",
+        xs:""
+      },
+      rules: {
+        name:{min:10,max:20,message:"请填写10-20位的名称"},
+        area:{ min:1,max:30,message:"请填写1-20位的名称"},
+        time:{required: false, reg:'time',message:"请填写10-20位的名称,非必填"},
+        xz:{type:'array', min:10,max:20,message:"请填写10-20位的名称"},
+        zy:{ min:10,max:20,message:"请填写10-20位的名称"},
+        ps:{ min:10,max:20,message:"请填写10-20位的名称"},
+        xs:{ min:10,max:20,message:"请填写10-20位的名称"},
       }
     }
   },
@@ -125,7 +155,16 @@ export default {
         "pz-radiogroup":pzradiogroup,
     },
     methods:{
-      
+      submitHandle: async function() {
+        // var ischeck = await validate.checkAll(this.rules,this.form);
+         let ischeck =  true;
+          console.log(this.$refs);
+         let a = this.$refs.form.$children;
+         for(let i=0,l=a.length;i<l;i++){
+           ischeck = (ischeck && a[i].checkChange());//$data.error = true;
+         }
+        console.log(ischeck);
+      }
     }
 }
 

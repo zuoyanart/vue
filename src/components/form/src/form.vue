@@ -6,7 +6,13 @@
 <script>
 export default {
   data () {
-    return {}
+    return {
+      fields:{},
+      filedLength:0
+    }
+  },
+  created() {
+
   },
   computed: {},
   mounted () {},

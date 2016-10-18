@@ -49,7 +49,12 @@ module.exports = {
             test: /\.js$/,
             loader: 'babel',
             include: projectRoot,
-            exclude: /node_modules/
+            exclude: /node_modules/,
+            query: {
+             cacheDirectory: true,
+             plugins: ['transform-runtime'],
+             presets: ['es2015', 'stage-0']
+           }
         }, {
             test: /\.json$/,
             loader: 'json'

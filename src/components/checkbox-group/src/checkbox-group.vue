@@ -17,11 +17,7 @@ export default {
             value: []
         }
     },
-    watch: {
-      value(value){
-
-      }
-    },
+    watch: {},
     computed: {},
     mounted() {
         this.$on('checkChange', this.checkChange);
