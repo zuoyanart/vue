@@ -23,18 +23,18 @@ let validate = (function() {
     };
 
     const validOption = {
-       required: true,
-       type:"string",//string, number,boolean
+        required: true,
+        type: "string", //string, number,boolean
         min: 1,
         max: 1000000,
         reg: '',
         eq: '',
-        url:'',
-        message:'验证规则描述'
+        url: '',
+        message: '验证规则描述'
     }
 
     self.check = async(rule, value) => { //验证
-            rule =  mergeJson(rule, validOption);
+            rule = mergeJson(rule, validOption);
             let ischeck = true;
             if (!rule.required && value == '') { //不是必填
                 ischeck = true;
@@ -45,30 +45,31 @@ let validate = (function() {
             let len = 0;
 
             switch (rule.type) {
-              case 'string':
-                  len = getCharLen(value);
-                break;
-              case 'array':
-                   len = value.length;
-                  break;
-              case 'number':
-                len = parseInt(value);
-                break;
+                case 'string':
+                    len = getCharLen(value);
+                    break;
+                case 'array':
+                    len = value.length;
+                    break;
+                case 'number':
+                    len = parseInt(value);
+                    break;
             }
-
-            if (len < rule.min || len > rule.max) {
-                ischeck = false;
-                return ischeck;
+            if (rule.type != "array") {
+                if (len < rule.min || len > rule.max) {
+                    ischeck = false;
+                    return ischeck;
+                }
             }
             console.log("len");
             //chek eq
             if (rule.eq && rule.eq != '') {
-              if(rule.eq === value) {
-                ischeck = true;
-              } else{
-                ischeck = false;
-                return ischeck;
-              }
+                if (rule.eq === value) {
+                    ischeck = true;
+                } else {
+                    ischeck = false;
+                    return ischeck;
+                }
             }
             console.log("eq");
             //check url
@@ -107,26 +108,26 @@ let validate = (function() {
          * @return {[type]}          [description]
          */
     self.checkAll = async(rules, values) => {
-       let ischeck = true;
-       let check = false;
+        let ischeck = true;
+        let check = false;
 
-        for(let key in values) {
-          check = await self.check(rules[key], values[key]);
-          if(check == false) {
-            ischeck = false;
-          }
+        for (let key in values) {
+            check = await self.check(rules[key], values[key]);
+            if (check == false) {
+                ischeck = false;
+            }
         }
 
         return ischeck;
     }
 
-      /**
+    /**
      * 获取字符串长度，区分中英文
      * @param  {[type]} str [description]
      * @return {[type]}     [description]
      */
-     function getCharLen (str) { //获取字符串长度，区分中英文
-      return str.replace(/[^\x00-\xff]/g, "rr").length;
+    function getCharLen(str) { //获取字符串长度，区分中英文
+        return str.replace(/[^\x00-\xff]/g, "rr").length;
     }
     /**
      * 合并json
@@ -136,12 +137,12 @@ let validate = (function() {
      * @return {[type]}         [description]
      */
     function mergeJson(options, def) {
-      for(let key in def) {
-        if(options[key] == undefined) {
-          options[key] = def[key];
+        for (let key in def) {
+            if (options[key] == undefined) {
+                options[key] = def[key];
+            }
         }
-      }
-      return options;
+        return options;
     }
 
     return self;

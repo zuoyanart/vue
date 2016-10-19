@@ -15,6 +15,7 @@
 </template>
 
 <script>
+
 import validate from '../../../module/info/tools/validate.js';
 export default {
     data() {
@@ -34,13 +35,13 @@ export default {
                 type: Object,
                 default: function() {
                     return {
-                      required: true,
-                       type:"string",//string, number,boolean
+                        required: true,
+                        type: "string", //string, number,boolean
                         min: 1,
                         max: 10000,
                         reg: '',
                         eq: '',
-                        message:'验证规则描述'
+                        message: '验证规则描述'
                     }
                 }
             }
@@ -52,21 +53,24 @@ export default {
         },
         methods: {
             'checkChange': async function(msg) {
-              msg ? this.value = msg : '';
-              let ischeck = await validate.check(this.validate, this.value);
-              console.log("ischeck=" + ischeck);
-              if(ischeck) {//通过校验
-                this.error = false;
-              } else {
-                this.error = true;
-              }
-              this.isshow = false;
+                if (msg != undefined) {
+                    this.value = msg;
+                }
+                let ischeck = await validate.check(this.validate, this.value);
+                console.log("change-ischeck=" + ischeck);
+                if (ischeck.check) { //通过校验
+                    this.error = false;
+                } else {
+                    this.error = true;
+                }
+                this.isshow = false;
+                return !this.error;
             },
             'checkFocus': function() {
-              this.isshow = true;
+                this.isshow = true;
             },
             'checkBlur': function() {
-               this.isshow = false;
+                this.isshow = false;
             }
         },
         components: {}

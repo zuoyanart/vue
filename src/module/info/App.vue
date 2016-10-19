@@ -156,14 +156,13 @@ export default {
     },
     methods:{
       submitHandle: async function() {
-        // var ischeck = await validate.checkAll(this.rules,this.form);
-         let ischeck =  true;
-          console.log(this.$refs);
-         let a = this.$refs.form.$children;
-         for(let i=0,l=a.length;i<l;i++){
-           ischeck = (ischeck && a[i].checkChange());//$data.error = true;
-         }
-        console.log(ischeck);
+        let ischeck =  await this.$refs.form.validate();
+        console.log("ischeck=" + ischeck);
+        if(ischeck) {//通过验证
+          //TODO: submit or ajax
+        } else{
+          alert("数据验证失败");
+        }
       }
     }
 }

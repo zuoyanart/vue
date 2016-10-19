@@ -11,20 +11,24 @@ export default {
       filedLength:0
     }
   },
-  created() {},
-  computed: {},
-  mounted () {
-    var a = this.$children;
-    console.log("children========");
-    console.log(a);
-    // for(let i=0,i<a.length;i<l;i++) {
-    //
-    // }
-    a[7].$children[0].$on("click", this.sub)
+  created() {
+
   },
+  computed: {},
+  mounted () {},
   methods: {
-    sub:function() {
-      alert(1);
+    validate: async function() {//表单验证
+      let ischeck = true;
+      let child = this.$children;
+      let data = false;
+
+      for(let i=0,l=child.length;i<l;i++){
+        data =  await child[i].checkChange();
+        console.log("data=" + data);
+        ischeck = (ischeck && data);
+      }
+      console.log(ischeck);
+      return ischeck;
     }
   },
   components: {}
