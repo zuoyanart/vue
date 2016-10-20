@@ -1,7 +1,4 @@
-
-
 <template lang="html">
-
 <div class="radio-group">
     <slot></slot>
 </div>
@@ -29,7 +26,7 @@ export default {
     methods: {
         'checkChange': function(msg, ischecked) {
           this.value = msg;
-            this.$emit('input', this.value);
+            this.$emit('input', this.value, false);
         }
     },
     components: {}

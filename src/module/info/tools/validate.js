@@ -24,7 +24,7 @@ let validate = (function() {
 
     const validOption = {
         required: true,
-        type: "string", //string, number,boolean
+        type: "string", //string, number,array
         min: 1,
         max: 1000000,
         reg: '',
@@ -36,6 +36,10 @@ let validate = (function() {
     self.check = async(rule, value) => { //验证
             rule = mergeJson(rule, validOption);
             let ischeck = true;
+            if(rule.message == '$') {
+              ischeck = true;
+              return ischeck;
+            }
             if (!rule.required && value == '') { //不是必填
                 ischeck = true;
                 return ischeck;
@@ -43,7 +47,6 @@ let validate = (function() {
             console.log("required");
             //比较长度
             let len = 0;
-
             switch (rule.type) {
                 case 'string':
                     len = getCharLen(value);
@@ -55,12 +58,12 @@ let validate = (function() {
                     len = parseInt(value);
                     break;
             }
-            if (rule.type != "array") {
+           console.log(value + "=" + rule.type + " len=" + len);
                 if (len < rule.min || len > rule.max) {
                     ischeck = false;
                     return ischeck;
                 }
-            }
+
             console.log("len");
             //chek eq
             if (rule.eq && rule.eq != '') {

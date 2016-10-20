@@ -150,6 +150,16 @@ textarea {
       padding-right: 80px;
     }
 }
+.checkbox-group, .radio-group{
+  padding: 2px 8px;
+  border:1px solid #fff;
+  // & + .validate-tip {
+  //   position: relative!important;
+  //   display: block!important;
+  //   // bottom: -20px!important;
+  //   // top:0!important;
+  // }
+}
 //单选 复选按钮
 .checkbox-inline {
     margin-right: 20px;

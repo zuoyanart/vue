@@ -83,7 +83,7 @@
       <pz-formitem label="及时配送" :validate="rules.ps">
         <pzinput v-model="form.ps"></pzinput>
       </pz-formitem>
-      <pz-formitem label="活动性质">
+      <pz-formitem label="活动性质" :validate="rules.xz">
         <pz-checkboxgroup v-model="form.xz">
           <pzcheckbox name="form1" value="1" checked="true">美食</pzcheckbox>
           <pzcheckbox name="form1" value="2" checked="true">地推活动</pzcheckbox>
@@ -101,8 +101,9 @@
         <pzinput v-model="form.xs"></pzinput>
       </pz-formitem>
       <pz-formitem><pzbutton  @click.native="submitHandle">提交</pzbutton></pz-formitem>
-      {{form}}
     </pz-form>
+    <br><br>
+    result:  {{form}}
 </div>
 
 </template>
@@ -133,13 +134,12 @@ export default {
         xs:""
       },
       rules: {
-        name:{min:10,max:20,message:"请填写10-20位的名称"},
+        name:{min:1,max:20,message:"请填写1-20位的名称"},
         area:{ min:1,max:30,message:"请填写1-20位的名称"},
-        time:{required: false, reg:'time',message:"请填写10-20位的名称,非必填"},
-        xz:{type:'array', min:10,max:20,message:"请填写10-20位的名称"},
-        zy:{ min:10,max:20,message:"请填写10-20位的名称"},
-        ps:{ min:10,max:20,message:"请填写10-20位的名称"},
-        xs:{ min:10,max:20,message:"请填写10-20位的名称"},
+        time:{required: false, reg:'time',message:"请填写1-20位的名称,非必填"},
+        xz:{type:'array', min:3,max:4,message:"请至少选择一项"},
+        ps:{ min:1,max:20,message:"请填写1-20位的名称"},
+        xs:{ min:1,max:20,message:"请填写1-20位的名称"},
       }
     }
   },
@@ -157,11 +157,10 @@ export default {
     methods:{
       submitHandle: async function() {
         let ischeck =  await this.$refs.form.validate();
-        console.log("ischeck=" + ischeck);
         if(ischeck) {//通过验证
           //TODO: submit or ajax
         } else{
-          alert("数据验证失败");
+          console.log("数据验证失败");
         }
       }
     }

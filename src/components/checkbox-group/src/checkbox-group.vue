@@ -2,7 +2,7 @@
 
 <template lang="html">
 
-<div class="checkbox-group">
+<div class="checkbox-group" @mouseenter="mouseenter" @mouseleave="mouseleave">
     <slot></slot>
 </div>
 
@@ -25,7 +25,7 @@ export default {
     methods: {
         'checkChange': function(msg, ischecked) {
             var index = this.value.indexOf(msg);
-            console.log(msg);
+            console.log("msg=" + msg);
             if (ischecked) { //true
                 if (index === -1) {
                     this.value.push(msg);
@@ -33,8 +33,14 @@ export default {
             } else {
                 this.value.splice(index, 1);
             }
-            console.log(this.value);
-             this.$emit('input', this.value);
+            this.$emit('input', this.value);
+            this.$parent.$emit('pz.form.change', this.value, false);
+        },
+        'mouseenter': function() {
+            this.$parent.$emit('pz.form.focus');
+        },
+        'mouseleave': function() {
+            this.$parent.$emit('pz.form.change', this.value);
         }
     },
     components: {}

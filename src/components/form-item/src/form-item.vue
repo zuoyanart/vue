@@ -1,9 +1,3 @@
-<style lang="css">
-
-
-
-</style>
-
 <template lang="html">
 
 <div class="form-item" :class="{'form-iserror': error}">
@@ -36,12 +30,12 @@ export default {
                 default: function() {
                     return {
                         required: true,
-                        type: "string", //string, number,boolean
+                        type: "string", //string, number,array
                         min: 1,
                         max: 10000,
                         reg: '',
                         eq: '',
-                        message: '验证规则描述'
+                        message: '$'
                     }
                 }
             }
@@ -52,18 +46,22 @@ export default {
             this.$on('pz.form.focus', this.checkFocus);
         },
         methods: {
-            'checkChange': async function(msg) {
+            'checkChange': async function(msg, isshow = true) {
                 if (msg != undefined) {
                     this.value = msg;
                 }
+                if(this.message == '$') {
+                  return true;
+                }
                 let ischeck = await validate.check(this.validate, this.value);
-                console.log("change-ischeck=" + ischeck);
-                if (ischeck.check) { //通过校验
+                if (ischeck) { //通过校验
                     this.error = false;
                 } else {
                     this.error = true;
                 }
-                this.isshow = false;
+                if(isshow) {
+                  this.isshow = false;
+                }
                 return !this.error;
             },
             'checkFocus': function() {
