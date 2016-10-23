@@ -10,7 +10,7 @@
 
 <script>
 
-import validate from '../../../module/info/tools/validate.js';
+import validate from '../../../tools/validate.js';
 export default {
     data() {
             return {
