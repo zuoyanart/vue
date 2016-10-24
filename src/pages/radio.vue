@@ -1,48 +1,24 @@
-<style lang="scss">
-
-@import "./assets/scss/pizza.scss";
-@import "./assets/scss/font-awesome.scss";
-@import "./assets/site.scss";
-@import "./assets/markdown.css";
-
-#app {
-}
-
-</style>
-
-<template>
-
-<div id="app">
-  <div class="head">
-    <div class="head-c">
-      <h1><router-link to="/">Pizza Vue<em>1.0.0</em></router-link></h1>
-      <span>
-        <router-link to="/guid">指南</router-link>
-        <router-link to="/component">组件</router-link>
-        <router-link to="/resource">资源</router-link>
-      </span>
-    </div>
+<template lang="html">
+  <div>
+    <h2>单选</h2>
+    <pzradio name="t1" value="0" checked="true">选项1</pzradio>
+    <pzradio name="t1" value="1">选项2</pzradio>
+    <pzradio name="t1" value="2">选项3</pzradio>
+    <pzradio name="t1" value="3" :disabled="true">禁用</pzradio>
   </div>
-  <router-view></router-view>
-  <div class="footer">
-
-  </div>
-</div>
-
 </template>
 
 <script>
-
-import validate from './tools/validate.js';
-import pzbutton from './components/button/index';
-import pzcheckbox from './components/checkbox/index';
-import pzinput from './components/input/index';
-import pzinputnumber from './components/input-number/index';
-import pzradio from './components/radio/index';
-import pzform from './components/form/index';
-import pzformitem from './components/form-item/index';
-import pzcheckboxgroup from './components/checkbox-group/index';
-import pzradiogroup from './components/radio-group/index';
+import validate from '../tools/validate.js';
+import pzbutton from '../components/button/index';
+import pzcheckbox from '../components/checkbox/index';
+import pzinput from '../components/input/index';
+import pzinputnumber from '../components/input-number/index';
+import pzradio from '../components/radio/index';
+import pzform from '../components/form/index';
+import pzformitem from '../components/form-item/index';
+import pzcheckboxgroup from '../components/checkbox-group/index';
+import pzradiogroup from '../components/radio-group/index';
 
 export default {
   data(){
@@ -88,5 +64,7 @@ export default {
       }
     }
 }
-
 </script>
+
+<style lang="css">
+</style>

@@ -7,7 +7,7 @@ var projectRoot = path.resolve(__dirname, '../')
 module.exports = {
     entry: {
        index: path.resolve(__dirname, '../src/main.js'),
-       vendors:'vue.js'
+       vendors:'vue'
      },
     output: {
         path: config.build.assetsRoot,
@@ -78,7 +78,7 @@ module.exports = {
         }, {
             test: /\.scss$/,
              loader: "style!css!sass"
-        }]
+        }],
     },
     // eslint: {
     //   formatter: require('eslint-friendly-formatter')
