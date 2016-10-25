@@ -3,7 +3,7 @@
 </style>
 
 <template lang="html">
-  <div class="input" :class="{disabled: disabled}">
+  <div class="input" :class="[{disabled: disabled}, size ? 'input-' + size : '']">
     <div class="input-prepend" v-if="$slots.prepend">
       <slot name="prepend"></slot>
     </div>
@@ -48,6 +48,10 @@ export default {
             disabled:{
               type: Boolean,
               default: false
+            },
+            size:{
+              type: String,
+              default:''
             }
         },
         computed: {},

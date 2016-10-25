@@ -7,7 +7,7 @@
       <template slot="prepend">email</template>
     </pzinput>
     <br>
-    <pzinput placeholder="请输入网址" type="email" id="input5" value="">
+    <pzinput placeholder="请输入网址" type="email" id="input5" value="" size="larger">
       <template slot="prepend">http://</template>
       <template slot="append">.com</template>
     </pzinput>
