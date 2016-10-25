@@ -7,7 +7,6 @@ var projectRoot = path.resolve(__dirname, '../')
 module.exports = {
     entry: {
        index: path.resolve(__dirname, '../src/main.js'),
-       vendors:'vue'
      },
     output: {
         path: config.build.assetsRoot,
