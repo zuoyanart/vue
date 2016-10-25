@@ -1,0 +1,19 @@
+//border
+@mixin border($color: #999,$width: 1px, $style: solid){
+    border: $width  $style $color;
+}
+
+@mixin border-radius($value: 5px){
+    border-radius: $value;
+}
+
+@mixin box-shadow ($x: 0, $y: 0, $blur: 1px, $color: #000) {
+  box-shadow: $x $y $blur $color;
+  -moz-box-shadow: $x $y $blur $color;
+  -webkit-box-shadow: $x $y $blur $color;
+}
+
+//form
+@mixin input-focus($color: $input-shadow-color) {
+    box-shadow: 0 0 8px $color;
+}
