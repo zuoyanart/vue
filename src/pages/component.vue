@@ -5,6 +5,7 @@
       <router-link to="input">input</router-link>
       <router-link to="checkbox">checkbox</router-link>
       <router-link to="radio">radio</router-link>
+      <router-link to="select1">select</router-link>
       <router-link to="form">表单</router-link>
     </div>
     <div class="right">
@@ -24,6 +25,7 @@ import pzform from '../components/form/index';
 import pzformitem from '../components/form-item/index';
 import pzcheckboxgroup from '../components/checkbox-group/index';
 import pzradiogroup from '../components/radio-group/index';
+import pzselect from '../components/select/index';
 
 export default {
   data(){

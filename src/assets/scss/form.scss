@@ -352,12 +352,13 @@ input[type="radio"] {
     position: relative;
     cursor: pointer;
     display: inline-block;
-    *display: inline;
-    *float: left;
-    *margin-right: 10px;
     background: $input-bg;
-    border-radius: 3px;
-    border: 1px solid $input-border-color;
+    // border-radius: 3px;
+    &:hover{
+      input {
+        border: 1px solid $bgcolor-info;
+      }
+    }
     .select-button {
         width: 100%;
         height: 28px;
@@ -372,6 +373,10 @@ input[type="radio"] {
         outline: none;
         word-break: keep-all;
         text-overflow: ellipsis;
+        position:absolute;
+        top:5px;
+        left:5px;
+        background-color: transparent;
     }
     .select-down {
         position: absolute;
@@ -393,7 +398,6 @@ input[type="radio"] {
         border: 1px solid #e8e8e8;
         box-shadow: 0 0 3px #ddd;
         border-radius: 3px;
-        display: none;
         z-index: 2000000;
         position: absolute;
         left: -1px;
@@ -409,6 +413,7 @@ input[type="radio"] {
         max-height: 240px;
         position: relative;
         z-index: 200000;
+        border:1px solid #ccc;
     }
     .select-list ul li {
         width: auto;
