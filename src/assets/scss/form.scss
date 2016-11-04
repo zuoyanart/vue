@@ -348,11 +348,12 @@ input[type="radio"] {
 //select css
 .btn-select {
     width: 240px;
-    height: 25px;
+    height: 34px;
     position: relative;
     cursor: pointer;
     display: inline-block;
     background: $input-bg;
+    outline: none;
     // border-radius: 3px;
     &:hover{
       input {
@@ -360,13 +361,13 @@ input[type="radio"] {
       }
     }
     .select-button {
-        width: 100%;
-        height: 28px;
+        width: 90%;
+        height: 24px;
         border: none;
         border-radius: 3px;
         background: #fff;
         cursor: pointer;
-        padding: 0 26px 0 10px;
+        padding: 0 26px 0 5px;
         display: inline-block;
         overflow: hidden;
         text-align: left;
@@ -374,7 +375,7 @@ input[type="radio"] {
         word-break: keep-all;
         text-overflow: ellipsis;
         position:absolute;
-        top:5px;
+        top:8px;
         left:5px;
         background-color: transparent;
     }

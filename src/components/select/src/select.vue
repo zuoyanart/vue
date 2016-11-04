@@ -1,11 +1,11 @@
 <template lang="html">
-  <div class="btn-select">
+  <div class="btn-select" @blur="isshow=false" tabindex="1">
     <i class="select-down icon-caret-down"></i>
     <input type="text" class="input" :value="inputValue" :placeholder="placeholder" readonly="readonly">
-    <label class="select-button" @click="selectClick">{{text == placeholder ? '': text }}</label>
+    <label class="select-button" @click="selectClick" v-html="text == placeholder ? '': text"></label>
     <div class="select-list" v-show="isshow">
-      <ul @click="optionsClick">
-        <li v-for="item in options" :value="item.value">{{item.text}}</li>
+      <ul >
+        <li @click.capture="optionsClick" v-for="item in options" :value="item.value" v-html="item.text"></li>
       </ul>
     </div>
   </div>
@@ -24,49 +24,85 @@ export default {
   props: {
       placeholder: {
           type: String,
-          default: '请选择'
+          default: ''
       },
       disabled:{
         type: Boolean,
+        default: false
+      },
+      default: {
+        type: null,
         default: false
       },
       options:{
         type: Array,
         default: function() {
           return [{
-            text: "请选择",
+            text: "不限",
             value: 0,
             default:true
           }]
         }
+      },
+      change: {
+        type: Function,
+        default: function() {}
       }
   },
   computed: {},
   mounted () {
-    let options = this.options;
-    for(let i=0,l=options.length;i<l;i++) {
-      if(options[i].default) {
-        this.value = options[i].value;
-        this.text = options[i].text;
-        if(this.text != this.placeholder) {
-          this.inputValue = ' ';
-        }
-      }
-    }
+    this.setValue();
   },
   methods: {
     'selectClick': function() {
-      this.isshow = !this.isshow;
+      this.isshow =  !this.isshow;
     },
     'optionsClick': function(event) {
-      this.text = event.target.innerText;
-      this.value = event.target.getAttribute("value");
+      let t = event.currentTarget;
+      let val = t.getAttribute("value");
+
+      if(val != this.value) {
+        this.change(val);
+      }
+
+      this.text = t.innerHTML;
+      this.value = val;
+
       if(this.text !== this.placeholder) {
         this.inputValue = ' ';
       } else {
         this.inputValue = '';
       }
       this.isshow = false;
+      this.$emit('input', this.value);
+    },
+    setValue: function() {
+      let options = this.options;
+      let ischeck = false;
+      for(let i=0,l=options.length;i<l;i++) {
+        if(options[i].value === this.default) {
+          this.value = options[i].value;
+          this.text = options[i].text;
+          if(this.text != this.placeholder) {
+            this.inputValue = ' ';
+          }
+          ischeck = true;
+          break;
+        }
+      }
+      if(!ischeck) {
+        this.value = options[0].value;
+        this.text = options[0].text;
+        console.log(this.placeholder);
+        this.inputValue = (this.placeholder == '' ? ' ' : '') ;
+      }
+      this.$emit('input', this.value);
+      this.change(this.value);
+    }
+  },
+  watch:{
+    'default': function() {
+      this.setValue();
     }
   },
   components: {}
