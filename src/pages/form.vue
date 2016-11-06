@@ -90,6 +90,7 @@ export default {
           //TODO: submit or ajax
         } else{
           console.log("数据验证失败");
+          this.$layer.alert("asd");
         }
       }
     }
