@@ -6,6 +6,8 @@
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
+    "page" : "node build/build.js && cd ./dist && live-server --port=8081 ",
+    "ghpage" : "node build/build.js && cd dist && git add -A && git commit -m init && cd ../ && git subtree push -P dist origin gh-pages",
     "build": "node build/build.js",
     "unit": "karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
@@ -49,6 +51,8 @@
     "file-loader": "^0.9.0",
     "function-bind": "^1.0.2",
     "glob": "^7.1.1",
+    "highlight-loader": "^0.7.2",
+    "html-loader": "^0.4.4",
     "html-webpack-plugin": "^2.8.1",
     "http-proxy-middleware": "^0.17.2",
     "inject-loader": "^2.0.1",

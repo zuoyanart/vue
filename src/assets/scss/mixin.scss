@@ -17,3 +17,18 @@
 @mixin input-focus($color: $input-shadow-color) {
     box-shadow: 0 0 8px $color;
 }
+
+
+@mixin placeholder($color: $input-placeholder-color) {
+  /* 通用 */
+  ::-webkit-input-placeholder { color:#f00; }
+  ::-moz-placeholder { color:#f00; } /* firefox 19+ */
+  :-ms-input-placeholder { color:#f00; } /* ie */
+  input:-moz-placeholder { color:#f00; }
+
+  /* webkit专用 */
+  input::-webkit-input-placeholder { color:#00f; }
+
+  /* mozilla专用 */
+  input::-moz-placeholder { color:#00f; }
+}

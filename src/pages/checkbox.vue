@@ -1,48 +1,24 @@
-<style lang="scss">
-
-@import "./assets/scss/pizza.scss";
-@import "./assets/scss/font-awesome.scss";
-@import "./assets/site.scss";
-@import "./assets/markdown.css";
-
-#app {
-}
-
-</style>
-
-<template>
-
-<div id="app">
-  <div class="head">
-    <div class="head-c">
-      <h1><router-link to="/">Pizza Vue<em>1.0.0</em></router-link></h1>
-      <span>
-        <router-link to="/guid">指南</router-link>
-        <router-link to="/component">组件</router-link>
-        <router-link to="/resource">资源</router-link>
-      </span>
-    </div>
+<template lang="html">
+  <div>
+    <h2>复选</h2>
+    <pzcheckbox name="c1" value="1" checked="true">好吧</pzcheckbox>
+    <pzcheckbox name="c1" value="2">sdf</pzcheckbox>
+    <pzcheckbox name="c1" value="3">sdf</pzcheckbox>
+    <pzcheckbox name="c1" value="4" :disabled="true">不可用</pzcheckbox>
   </div>
-  <router-view></router-view>
-  <div class="footer">
-
-  </div>
-</div>
-
 </template>
 
 <script>
-
-import validate from './tools/validate.js';
-import pzbutton from './components/button/index';
-import pzcheckbox from './components/checkbox/index';
-import pzinput from './components/input/index';
-import pzinputnumber from './components/input-number/index';
-import pzradio from './components/radio/index';
-import pzform from './components/form/index';
-import pzformitem from './components/form-item/index';
-import pzcheckboxgroup from './components/checkbox-group/index';
-import pzradiogroup from './components/radio-group/index';
+import validate from '../tools/validate.js';
+import pzbutton from '../components/button/index';
+import pzcheckbox from '../components/checkbox/index';
+import pzinput from '../components/input/index';
+import pzinputnumber from '../components/input-number/index';
+import pzradio from '../components/radio/index';
+import pzform from '../components/form/index';
+import pzformitem from '../components/form-item/index';
+import pzcheckboxgroup from '../components/checkbox-group/index';
+import pzradiogroup from '../components/radio-group/index';
 
 export default {
   data(){
@@ -88,5 +64,7 @@ export default {
       }
     }
 }
-
 </script>
+
+<style lang="css">
+</style>
