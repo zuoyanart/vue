@@ -86,6 +86,21 @@
  	@include btn-css($bgcolor-danger);
 }
 
+.btn-mini{
+
+}
+
+.btn-small{
+  font-size: 12px;
+  min-width: 60px;
+  min-height: 30px;
+  padding:6px 8px;
+}
+
+.btn-large{
+
+}
+
 .btn-block {
   display: block;
   width: 100%;

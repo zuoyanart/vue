@@ -33,9 +33,13 @@ const routes = [{
         name: 'form',
         component: require("./pages/form.vue")
     },{
-        path: 'select1',
-        name: 'select1',
+        path: 'select',
+        name: 'select',
         component: require("./pages/select.vue")
+    },{
+        path: 'layer',
+        name: 'layer',
+        component: require("./pages/layer.vue")
     }]
 }];
 

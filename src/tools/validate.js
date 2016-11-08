@@ -44,7 +44,7 @@ let validate = (function() {
                 ischeck = true;
                 return ischeck;
             }
-            console.log("required");
+            // console.log("required");
             //比较长度
             let len = 0;
             switch (rule.type) {
@@ -58,13 +58,13 @@ let validate = (function() {
                     len = parseInt(value);
                     break;
             }
-           console.log(value + "=" + rule.type + " len=" + len);
+          //  console.log(value + "=" + rule.type + " len=" + len);
                 if (len < rule.min || len > rule.max) {
                     ischeck = false;
                     return ischeck;
                 }
 
-            console.log("len");
+            // console.log("len");
             //chek eq
             if (rule.eq && rule.eq != '') {
                 if (rule.eq === value) {
@@ -74,7 +74,7 @@ let validate = (function() {
                     return ischeck;
                 }
             }
-            console.log("eq");
+            // console.log("eq");
             //check url
             if (rule.url != '') {
                 let result = await tools.httpAgent("http://192.168.1.134:3004/v1/need/page", 'get');
@@ -85,7 +85,7 @@ let validate = (function() {
                     return ischeck;
                 }
             }
-            console.log("url");
+            // console.log("url");
             // check reg
             if (rule.reg && rule.reg != '') {
                 if (typeof(rule.reg) == 'string') {
@@ -100,7 +100,7 @@ let validate = (function() {
                     }
                 }
             }
-            console.log("reg");
+            // console.log("reg");
             return ischeck;
         }
         /**

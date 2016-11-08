@@ -5,8 +5,9 @@
       <router-link to="input">input</router-link>
       <router-link to="checkbox">checkbox</router-link>
       <router-link to="radio">radio</router-link>
-      <router-link to="select1">select</router-link>
+      <router-link to="select">select</router-link>
       <router-link to="form">表单</router-link>
+      <router-link to="layer">layer</router-link>
     </div>
     <div class="right">
         <router-view></router-view>
