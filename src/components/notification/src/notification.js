@@ -17,8 +17,14 @@ let Notification = (function() {
         cancel: '',
     }
     self.instances = {};
-    let seed = 1;
+    let seed = 0;
 
+    /**
+     * [function description]
+     * @method function
+     * @param  {[type]} options [description]
+     * @return {[type]}         [description]
+     */
     self.open = function(options) {
         options = mergeJson(options, defOptions);
         let id = 'notification_' + seed++;
@@ -28,7 +34,10 @@ let Notification = (function() {
         });
         instance.id = id;
         instance.vm = instance.$mount();
-        self.instances[id] = instance;
+        self.instances[id] = {
+          inst:instance,
+          type: options.type
+        }
         document.body.appendChild(instance.vm.$el);
         return id;
     };
@@ -64,27 +73,75 @@ let Notification = (function() {
          * @param  {[type]} yes     [description]
          * @return {[type]}         [description]
          */
-        self.confirm = function(content, options, yes, cancel) {
-                switch (typeof(options)) {
-                    case "function":
-                        yes = options;
-                        options = {};
-                        break;
-                    case "object":
-                        break;
-                    default:
-                        options = {};
-                        break;
-                }
-                yes = typeof(yes) == 'function' ? yes : '';
-                cancel = typeof(cancel) == 'function' ? cancel : '';
+    self.confirm = function(content, options, yes, cancel) {
+        switch (typeof(options)) {
+            case "function":
+                yes = options;
+                cancel = yes;
+                options = {};
+                break;
+            case "object":
+                break;
+            default:
+                options = {};
+                break;
+        }
+        yes = typeof(yes) == 'function' ? yes : '';
+        cancel = typeof(cancel) == 'function' ? cancel : 'cancel';
 
-                options.content = content || '';
-                options.yes = yes;
-                options.cancel = cancel;
-                return self.open(options);
+        options.content = content || '';
+        options.yes = yes;
+        options.cancel = cancel;
+        return self.open(options);
+    }
+/**
+ * [function description]
+ * @method function
+ * @param  {[type]} content [description]
+ * @param  {[type]} options [description]
+ * @param  {[type]} end     [description]
+ * @return {[type]}         [description]
+ */
+    self.msg = function(content, options, end) {
+        switch (typeof(options)) {
+            case "function":
+                end = options;
+                options = {};
+                break;
+            case "object":
+                break;
+            default:
+                options = {};
+                break;
+        }
+        end = typeof(end) == 'function' ? end : '';
+        options.type = 5;
+        options.time = 2;
+        options.content = content || 'this is a msg!!';
+        options.yes = end;
+        for (var k in self.instances) {
+          if(self.instances[k].type == 5) {
+              document.getElementById(k).remove();
+              delete self.instances[k];
+          }
+        }
+
+        return self.open(options);
+    }
+    //loading
+    self.loading = function(icon, options) {
+            if(typeof(icon) == "object") {
+              options = icon;
+              icon = 0;
             }
-
+            options = options || {};
+            options.icon = icon ? icon : 0;
+            if (options.icon < 0 || options.icon > 2) {
+                options.icon = 0;
+            }
+            options.type = 3;
+            return self.open(options);
+        }
         /**
          * 关闭一个弹窗
          * @param  {[type]} id [description]

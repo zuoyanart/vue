@@ -66,6 +66,13 @@
   }
 }
 
+.btn-default {
+  @include btn-css(#f1f1f1);
+  color:#000;
+  &:hover{
+    color: #000;
+  }
+}
 .btn-primary {
   @include btn-css($btn-primary-bgcolor);
 }
