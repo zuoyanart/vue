@@ -15,7 +15,7 @@ let Notification = (function() {
         shade: true,
         yes: '',
         cancel: '',
-        tips: 0,//支持上右下左四个方向，通过1-4进行方向设定,可以设定tips: [1, '#c00']
+        tips: [0,{}],//支持上右下左四个方向，通过1-4进行方向设定,可以设定tips: [1, '#c00']
         tipsMore: false,//是否允许多个tips
         shadeClose: false,
     }
@@ -32,6 +32,9 @@ let Notification = (function() {
         options = mergeJson(options, defOptions);
         let id = 'notification_' + seed++;
         options.id = id;
+        if(options.type == 2) {//ifrme
+          options.content = '<iframe src="'+options.content+'"></iframe>'
+        }
         let instance = new NotificationConstructor({
             data: options
         });
@@ -152,6 +155,10 @@ let Notification = (function() {
       options.type = 4;
       options.content = content || '';
       options.title = follow || 'body';
+      options.tips = options.tips || [0,{}];
+      if(typeof(options.tips) !== 'object') {
+        options.tips = [options.tips,{}];
+      }
       if(!options.tipsMore) {
         self.closeAll("tips");
       }

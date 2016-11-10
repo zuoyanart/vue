@@ -3,8 +3,8 @@
 <template lang="html">
   <div class="notify" :id="id" :class="{'notify-msg-p':isMsg, 'notify-tips-p': isTips}">
     <pzalert :options="this.$data" v-if="this.$data.type==0"></pzalert>
-    <pzalert :options="this.$data" v-if="this.$data.type==1"></pzalert>
-    <pzalert :options="this.$data" v-if="this.$data.type==2"></pzalert>
+    <pzpage :options="this.$data" v-if="this.$data.type==1"></pzpage>
+    <pziframe :options="this.$data" v-if="this.$data.type==2"></pziframe>
     <pzloading :options="this.$data" v-if="this.$data.type==3"></pzloading>
     <pztips :options="this.$data" v-if="this.$data.type==4"></pztips>
     <pzmsg :options="this.$data" v-if="this.$data.type==5"></pzmsg>
@@ -18,6 +18,8 @@ import pzalert from './alert.vue';
 import pzloading from './loading.vue';
 import pzmsg from './msg.vue';
 import pztips from './tips.vue';
+import pzpage from './page.vue';
+import pziframe from './iframe.vue';
 
 export default {
     data() {
@@ -34,7 +36,6 @@ export default {
                 shade: true,
                 yes: '',
                 cancel: ''
-
             }
         },
         computed: {
@@ -58,6 +59,8 @@ export default {
             pzloading,
             pzmsg,
             pztips,
+            pzpage,
+            pziframe,
         }
 }
 

@@ -2,7 +2,7 @@
 
 <template lang="html">
 
-<label class="notify-tips" :class="'notify-tips-'+ this.options.tips">
+<label class="notify-tips" :class="[this.options.tips[1],'notify-tips-'+ this.options.tips[0]]">
     {{options.content}}
     <em></em>
 </label>
@@ -38,8 +38,9 @@ export default {
 
             setTimeout(function() {
                 self.btnyes();
-            }, self.options.time * 80000);
-              await this.getOffset();
+            }, self.options.time * 1000);
+
+            await this.getOffset();
 
         },
         methods: {
@@ -63,22 +64,19 @@ export default {
                 let o = document.querySelector(this.options.title); //用title传递that元素
                 let bound = o.getBoundingClientRect();
                 let oTips = document.querySelector("#" + this.options.id + ">label");
+                                console.log(oTips);
                 let boundTips = oTips.getBoundingClientRect();
 
                 let left = o.offsetLeft;
                 let top = o.offsetTop;
-                let windowWidth = document.body.clientWidth;
-                let windowHeight = document.body.clientHeight;
-                let tipsHeight = 32;
-                let tipsWidth = 0;
                 let jiantou = 8 + 1;
 
                 let offset = {};
-                switch (this.options.tips) {
+                switch (this.options.tips[0]) {
                     case 0:
                         offset = {
                             left: left + "px",
-                            top: top - tipsHeight - jiantou + "px"
+                            top: top - boundTips.height - jiantou + "px"
                         }
                         break;
                     case 1:

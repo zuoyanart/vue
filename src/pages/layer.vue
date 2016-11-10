@@ -1,7 +1,14 @@
-<style lang="css">
-
-
-
+<style lang="less">
+.notify{
+  .selfa{
+    max-width: 500px;
+    background-color: #999;
+    color: green;
+    &>em{
+      border-color: #999;
+    }
+  }
+}
 </style>
 
 <template lang="html">
@@ -22,7 +29,12 @@
     <pzbutton id="tips" @click.native="tipsHandle">上</pzbutton>
     <pzbutton  id="tips1" @click.native="tips1Handle">右</pzbutton>
     <pzbutton  id="tips2" @click.native="tips2Handle">下</pzbutton>
-    <pzbutton  id="tips3" @click.native="tips3Handle">左</pzbutton>
+    <pzbutton  id="tips3" @click.native="tips3Handle">左-自定义样式</pzbutton>
+    <h2>page</h2>
+    <pzbutton id="tips" @click.native="pageHandle">自定义</pzbutton>
+    <pzbutton  id="tips1" @click.native="tips1Handle">右</pzbutton>
+    <pzbutton  id="tips2" @click.native="tips2Handle">下</pzbutton>
+    <pzbutton  id="tips3" @click.native="tips3Handle">左-自定义样式</pzbutton>
 </div>
 
 </template>
@@ -92,7 +104,13 @@ export default {
             },
             tips3Handle: function() {
               let id = this.$layer.tips("在很久很久以前，在很久很久以前，在很久很久以前，在很久很久以前，在很久很久以前，在很久很久以前，", '#tips3', {
-                tips:3
+                tips:[3, {"selfa":true}]
+              });
+            },
+            pageHandle: function() {
+              let id = this.$layer.open({
+                type:2,
+                content: 'http://www.baidu.com'
               });
             },
         }
