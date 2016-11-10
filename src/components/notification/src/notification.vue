@@ -1,12 +1,12 @@
 
 
 <template lang="html">
-  <div class="notify" :id="id" :class="{'notify-msg-p':isMsg}">
+  <div class="notify" :id="id" :class="{'notify-msg-p':isMsg, 'notify-tips-p': isTips}">
     <pzalert :options="this.$data" v-if="this.$data.type==0"></pzalert>
     <pzalert :options="this.$data" v-if="this.$data.type==1"></pzalert>
     <pzalert :options="this.$data" v-if="this.$data.type==2"></pzalert>
     <pzloading :options="this.$data" v-if="this.$data.type==3"></pzloading>
-    <pzalert :options="this.$data" v-if="this.$data.type==4"></pzalert>
+    <pztips :options="this.$data" v-if="this.$data.type==4"></pztips>
     <pzmsg :options="this.$data" v-if="this.$data.type==5"></pzmsg>
 </div>
 </template>
@@ -17,6 +17,7 @@ import pzbutton from '../../button/index';
 import pzalert from './alert.vue';
 import pzloading from './loading.vue';
 import pzmsg from './msg.vue';
+import pztips from './tips.vue';
 
 export default {
     data() {
@@ -32,15 +33,17 @@ export default {
                 time: 0,
                 shade: true,
                 yes: '',
-                cancel: '',
-                ismsg: false,
+                cancel: ''
 
             }
         },
         computed: {
           "isMsg": function() {
             return this.type == 5 ? true :false;
-          }
+          },
+          "isTips": function() {
+            return  this.type == 4 ? true :false;
+          },
         },
         mounted() {},
         methods: {
@@ -54,6 +57,7 @@ export default {
             pzalert,
             pzloading,
             pzmsg,
+            pztips,
         }
 }
 

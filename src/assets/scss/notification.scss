@@ -4,6 +4,21 @@
     position: absolute;
     top: 0;
     left:0;
+    &.notify-msg-p{
+      display: inline;
+      height: 0px;
+      left:50%;
+      top:50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      background-color: rgba(0,0,0,.6);
+    }
+    &.notify-tips-p{
+      display: inline;
+      height: 0px;
+      top:0;
+      left:0;
+    }
     .notify-mask {
         background-color: #000;
         opacity: 0.4;
@@ -58,15 +73,6 @@
       transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
     }
-    &.notify-msg-p{
-      display: inline;
-      height: 0px;
-      left:50%;
-      top:50%;
-      transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      background-color: rgba(0,0,0,.6);
-    }
     .notify-msg{
       min-width: 50px;
       display: inline;
@@ -82,4 +88,67 @@
       text-align: center;
       border-radius: 5px;
     }
+    .notify-tips{
+      min-width: 50px;
+      display: inline;
+      height: 32px;
+      position:absolute;
+      left:50%;
+      top:50%;
+      // transform: translate(-50%, -50%);
+      // -ms-transform: translate(-50%, -50%);
+      background-color: #000;
+      color: #fff;
+      padding: 6px 12px;
+      text-align: center;
+      border-radius: 5px;
+      & > em {
+        border:10px solid #000;
+        position: absolute;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .notify-tips-0{//上
+      & >em{
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        left:15px;
+        bottom:-8px;
+      }
+    }
+    .notify-tips-1{//右
+      max-width: 200px;
+      height: auto;
+      & >em{
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        left:-8px;
+        top:0px;
+      }
+    }
+    .notify-tips-2{//下
+      & >em{
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+        left:15px;
+        top:-8px;
+      }
+    }
+    .notify-tips-3{//左
+      max-width: 200px;
+      height: auto;
+      & >em{
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        right:-8px;
+        top: 10px;
+      }
+    }
+
 }
