@@ -33,7 +33,7 @@ let Notification = (function() {
         let id = 'notification_' + seed++;
         options.id = id;
         if(options.type == 2) {//ifrme
-          options.content = '<iframe src="'+options.content+'"></iframe>'
+          options.content = '<iframe src="'+options.content+'" seamless="seamless" scrolling="auto" frameborder="0" style="height:'+(parseInt(options.area[1]) - 30)+'px"></iframe>'
         }
         let instance = new NotificationConstructor({
             data: options

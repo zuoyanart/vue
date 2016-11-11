@@ -151,4 +151,11 @@
       }
     }
 
+    .notify-iframe {//iframe
+      max-width: 2000px;
+      .notify-content{
+        padding: 0;
+      }
+    }
+
 }
