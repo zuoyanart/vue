@@ -1,0 +1,85 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'adduser' ]
+2 info using npm@3.10.9
+3 info using node@v4.5.0
+4 verbose adduser before first PUT { _id: 'org.couchdb.user:zuoyanart',
+4 verbose adduser   name: 'zuoyanart',
+4 verbose adduser   password: 'XXXXX',
+4 verbose adduser   email: 'huabinglan@163.com',
+4 verbose adduser   type: 'user',
+4 verbose adduser   roles: [],
+4 verbose adduser   date: '2016-11-14T15:44:10.010Z' }
+5 verbose request uri https://registry.npm.taobao.org/-/user/org.couchdb.user:zuoyanart
+6 verbose request new user, so can't send auth
+7 info attempt registry request try #1 at 11:44:10 PM
+8 verbose request id a5ba5d7993035ea9
+9 http request PUT https://registry.npm.taobao.org/-/user/org.couchdb.user:zuoyanart
+10 http 409 https://registry.npm.taobao.org/-/user/org.couchdb.user:zuoyanart
+11 verbose headers { date: 'Mon, 14 Nov 2016 15:44:11 GMT',
+11 verbose headers   'content-type': 'application/json; charset=utf-8',
+11 verbose headers   'content-length': '62',
+11 verbose headers   connection: 'keep-alive',
+11 verbose headers   'x-current-requests': '1',
+11 verbose headers   'x-readtime': '9' }
+12 verbose request invalidating /root/.npm/registry.npm.taobao.org/-/user/org.couchdb.user_3Azuoyanart on PUT
+13 verbose adduser update existing user
+14 verbose request uri https://registry.npm.taobao.org/-/user/org.couchdb.user:zuoyanart?write=true
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 11:44:11 PM
+17 http request GET https://registry.npm.taobao.org/-/user/org.couchdb.user:zuoyanart?write=true
+18 http 200 https://registry.npm.taobao.org/-/user/org.couchdb.user:zuoyanart?write=true
+19 verbose headers { date: 'Mon, 14 Nov 2016 15:44:12 GMT',
+19 verbose headers   'content-type': 'application/json; charset=utf-8',
+19 verbose headers   'content-length': '229',
+19 verbose headers   connection: 'keep-alive',
+19 verbose headers   'x-current-requests': '1',
+19 verbose headers   etag: '"e5-jMxBEhdicYYff3GvBNGvgA"',
+19 verbose headers   'x-readtime': '4' }
+20 verbose adduser userobj { _id: 'org.couchdb.user:zuoyanart',
+20 verbose adduser   name: 'zuoyanart',
+20 verbose adduser   password: 'XXXXX',
+20 verbose adduser   email: 'huabinglan@163.com',
+20 verbose adduser   type: 'user',
+20 verbose adduser   roles: [],
+20 verbose adduser   date: '2016-11-14T15:44:10.010Z' }
+21 verbose request uri https://registry.npm.taobao.org/-/user/org.couchdb.user:zuoyanart/-rev/undefined
+22 verbose request updating existing user; sending authorization
+23 info attempt registry request try #1 at 11:44:12 PM
+24 http request PUT https://registry.npm.taobao.org/-/user/org.couchdb.user:zuoyanart/-rev/undefined
+25 http 401 https://registry.npm.taobao.org/-/user/org.couchdb.user:zuoyanart/-rev/undefined
+26 verbose headers { date: 'Mon, 14 Nov 2016 15:44:13 GMT',
+26 verbose headers   'content-type': 'application/json; charset=utf-8',
+26 verbose headers   'content-length': '47',
+26 verbose headers   connection: 'keep-alive',
+26 verbose headers   'x-current-requests': '1',
+26 verbose headers   'x-readtime': '6' }
+27 verbose request invalidating /root/.npm/registry.npm.taobao.org/-/user/org.couchdb.user_3Azuoyanart on PUT
+28 verbose adduser back [ { [Error: unauthorized Login first: -/user/org.couchdb.user:zuoyanart/-rev/undefined] statusCode: 401, code: 'E401' },
+28 verbose adduser   { error: 'unauthorized', reason: 'Login first' },
+28 verbose adduser   '{"error":"unauthorized","reason":"Login first"}' ]
+29 warn adduser Incorrect username or password
+29 warn adduser You can reset your account by visiting:
+29 warn adduser
+29 warn adduser     https://npmjs.org/forgot
+30 verbose stack Error: unauthorized Login first: -/user/org.couchdb.user:zuoyanart/-rev/undefined
+30 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
+30 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
+30 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
+30 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:187:22)
+30 verbose stack     at emitTwo (events.js:87:13)
+30 verbose stack     at Request.emit (events.js:172:7)
+30 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1048:10)
+30 verbose stack     at emitOne (events.js:77:13)
+30 verbose stack     at Request.emit (events.js:169:7)
+30 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:969:12)
+31 verbose statusCode 401
+32 verbose cwd /home/data/host/zuoyan/vue/src/components/notification
+33 error Linux 3.10.0-229.el7.x86_64
+34 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "adduser"
+35 error node v4.5.0
+36 error npm  v3.10.9
+37 error code E401
+38 error unauthorized Login first: -/user/org.couchdb.user:zuoyanart/-rev/undefined
+39 error If you need help, you may report this error at:
+39 error     <https://github.com/npm/npm/issues>
+40 verbose exit [ 1, true ]
