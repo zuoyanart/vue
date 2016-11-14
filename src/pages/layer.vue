@@ -111,7 +111,7 @@ export default {
               let id = this.$layer.open({
                 type:2,
                 content: 'http://www.baidu.com',
-                area:['1500px','600px']
+                area:['800px','400px']
               });
             },
         }

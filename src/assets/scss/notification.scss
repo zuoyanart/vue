@@ -1,7 +1,7 @@
 .notify {
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left:0;
     &.notify-msg-p{
@@ -18,6 +18,7 @@
       height: 0px;
       top:0;
       left:0;
+      position: absolute;
     }
     .notify-mask {
         background-color: #000;
@@ -69,6 +70,13 @@
         cursor: move;
         -moz-user-select: -moz-none;
         -webkit-user-select: none;
+        .icon-remove{
+          position: absolute;
+          right:10px;
+          font-size: 20px;
+          top:10px;
+          cursor: pointer;
+        }
       }
     }
     .notify-loading{

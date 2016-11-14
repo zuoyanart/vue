@@ -1,0 +1,24 @@
+{
+  "name": "vue-layer",
+  "version": "0.5.7",
+  "description": "vue layer",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zuoyanart/vue.git"
+  },
+  "keywords": [
+    "vue",
+    "layer",
+    "zuoyan"
+  ],
+  "author": "zuoyan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zuoyanart/vue/issues"
+  },
+  "homepage": "http://vue.zuoyan.space/#/component/layer"
+}

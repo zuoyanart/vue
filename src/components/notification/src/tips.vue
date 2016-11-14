@@ -26,9 +26,9 @@ export default {
             }
         },
         computed: {
-          'offset': async function() {
-            return await this.getOffset();
-          }
+            'offset': async function() {
+                return await this.getOffset();
+            }
         },
         async mounted() {
             let self = this;
@@ -64,12 +64,13 @@ export default {
                 let o = document.querySelector(this.options.title); //用title传递that元素
                 let bound = o.getBoundingClientRect();
                 let oTips = document.querySelector("#" + this.options.id + ">label");
-                                console.log(oTips);
                 let boundTips = oTips.getBoundingClientRect();
 
+                let scrollTop = 0;//this.getScrollTop();
                 let left = o.offsetLeft;
-                let top = o.offsetTop;
+                let top = o.offsetTop - scrollTop;
                 let jiantou = 8 + 1;
+
 
                 let offset = {};
                 switch (this.options.tips[0]) {
@@ -101,6 +102,15 @@ export default {
                 oTips.style.left = offset.left;
                 oTips.style.top = offset.top;
                 // return offset;
+            },
+            'getScrollTop': function() {
+                var scrollTop = 0;
+                if (document.documentElement && document.documentElement.scrollTop) {
+                    scrollTop = document.documentElement.scrollTop;
+                } else if (document.body) {
+                    scrollTop = document.body.scrollTop;
+                }
+                return scrollTop;
             },
         },
         watch: {

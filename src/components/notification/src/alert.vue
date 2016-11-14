@@ -53,7 +53,7 @@ export default {
         methods: {
             'close': function(event) {
                 let mask = event.target.getAttribute("class");
-                if (mask && mask.indexOf("notify-mask") > -1) {
+                if (mask && (mask.indexOf("notify-mask") > -1 || mask.indexOf("icon-remove") > -1) ) {
                     delete this.$layer.instances[this.options.id];
                     document.getElementById(this.options.id).remove();
                 }
