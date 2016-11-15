@@ -16,7 +16,7 @@
 
 <script>
 
-import pzbutton from '../../button/index';
+import pzbutton from 'button';
 export default {
     data() {
             return {

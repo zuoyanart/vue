@@ -11,7 +11,7 @@
 
 <script>
 
-import pzbutton from '../../button/index';
+
 import pzalert from './alert.vue';
 import pzloading from './loading.vue';
 import pzmsg from './msg.vue';
@@ -64,7 +64,7 @@ export default {
 
 </script>
 
-<style lang="scss">
+<style lang="css">
 .notify {
     width: 100%;
     height: 100%;

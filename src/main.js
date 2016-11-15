@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
-import Notification from './components/notification/index.js';
+// import Notification from './components/notification/index.js';
+import layer from 'vue-layer';
 
 Vue.use(VueRouter);
-Vue.prototype.$layer = Notification;
+Vue.prototype.$layer = layer;
 
 const routes = [{
     path: '/',
