@@ -5,7 +5,10 @@ import VueRouter from 'vue-router'
 import layer from 'vue-layer';
 
 Vue.use(VueRouter);
+console.log("layer=");
+console.log(layer);
 Vue.prototype.$layer = layer;
+// Vue.prototype.$layer = layer;
 
 const routes = [{
     path: '/',

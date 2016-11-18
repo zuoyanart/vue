@@ -52,8 +52,9 @@ export default {
             'close': function(event) {
                 let mask = event.target.getAttribute("class");
                 if (mask && mask.indexOf("notify-mask") > -1) {
-                    delete this.$layer.instances[this.options.id];
-                    document.getElementById(this.options.id).remove();
+                    // delete this.$layer.instances[this.options.id];
+                    // document.getElementById(this.options.id).remove();
+                      this.options.layer.close(this.options.id);
                 }
             },
             'btnyes': function(event) {
@@ -61,16 +62,18 @@ export default {
                     console.log("asdasd");
                     this.options.yes();
                 } else {
-                    delete this.$layer.instances[this.options.id];
-                    document.getElementById(this.options.id).remove();
+                    // delete this.$layer.instances[this.options.id];
+                    // document.getElementById(this.options.id).remove();
+                    this.options.layer.close(this.options.id);
                 }
             },
             'btncancel': function(event) {
                 if (typeof(this.options.cancel) == "function") {
                     this.options.cancel();
                 } else {
-                    delete this.$layer.instances[this.options.id];
-                    document.getElementById(this.options.id).remove();
+                    // delete this.$layer.instances[this.options.id];
+                    // document.getElementById(this.options.id).remove();
+                      this.options.layer.close(this.options.id);
                 }
             },
             'moveStart': function(event) {

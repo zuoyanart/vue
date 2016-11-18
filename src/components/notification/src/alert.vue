@@ -54,8 +54,10 @@ export default {
             'close': function(event) {
                 let mask = event.target.getAttribute("class");
                 if (mask && (mask.indexOf("notify-mask") > -1 || mask.indexOf("icon-remove") > -1) ) {
-                    delete this.$layer.instances[this.options.id];
-                    document.getElementById(this.options.id).remove();
+                  console.log(this.options);
+                    // delete this.options.layer.instances[this.options.id];
+                    this.options.layer.close(this.options.id);
+                    // document.getElementById(this.options.id).remove();
                 }
             },
             'btnyes': function(event) {
@@ -63,16 +65,18 @@ export default {
                     console.log("asdasd");
                     this.options.yes();
                 } else {
-                    delete this.$layer.instances[this.options.id];
-                    document.getElementById(this.options.id).remove();
+                    // delete this.$layer.instances[this.options.id];
+                    // document.getElementById(this.options.id).remove();
+                      this.options.layer.close(this.options.id);
                 }
             },
             'btncancel': function(event) {
                 if (typeof(this.options.cancel) == "function") {
                     this.options.cancel();
                 } else {
-                    delete this.$layer.instances[this.options.id];
-                    document.getElementById(this.options.id).remove();
+                    // delete this.$layer.instances[this.options.id];
+                    // document.getElementById(this.options.id).remove();
+                      this.options.layer.close(this.options.id);
                 }
             },
             'moveStart': function(event) {

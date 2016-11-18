@@ -1,8 +1,8 @@
 {
     "name": "vue-layer",
-    "version": "0.5.8",
+    "version": "0.5.9",
     "description": "vue layer",
-    "main": "index.js",
+    "main": "./dist/vue-layer.js",
     "scripts": {
         "build": "webpack --config webpack.config.js --colors"
     },

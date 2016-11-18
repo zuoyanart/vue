@@ -8,7 +8,7 @@ npm install vue-layer
 
 with `main.js` or `index.js` add:
 ```js
-import layer from '/node_module/vue-layer/index.js'
+import layer from 'vue-layer'
 Vue.prototype.$layer = layer;
 ```
 in component

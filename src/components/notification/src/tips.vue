@@ -50,8 +50,9 @@ export default {
                     if (typeof(this.options.yes) == "function") {
                         this.options.yes();
                     }
-                    delete this.$layer.instances[this.options.id];
-                    o.remove();
+                    this.options.layer.close(this.options.id);
+                    // delete this.$layer.instances[this.options.id];
+                    // o.remove();
                 }
             },
             sleep: function(ms) {

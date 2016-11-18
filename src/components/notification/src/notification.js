@@ -17,11 +17,10 @@ let Notification = (function() {
         cancel: '',
         tips: [0,{}],//支持上右下左四个方向，通过1-4进行方向设定,可以设定tips: [1, '#c00']
         tipsMore: false,//是否允许多个tips
-        shadeClose: false,
+        shadeClose: false
     }
     self.instances = {};
     let seed = 0;
-
     /**
      * [function description]
      * @method function
@@ -35,6 +34,7 @@ let Notification = (function() {
         if(options.type == 2) {//ifrme
           options.content = '<iframe src="'+options.content+'" seamless="seamless" scrolling="auto" frameborder="0" style="height:'+(parseInt(options.area[1]) - 30)+'px"></iframe>'
         }
+        options.layer = self;
         let instance = new NotificationConstructor({
             data: options
         });

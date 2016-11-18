@@ -28,8 +28,9 @@ export default {
           let self = this;
 
           setTimeout(function () {
-              document.getElementById(self.options.id).remove();
-                delete self.$layer.instances[self.options.id];
+              self.options.layer.close(self.options.id);
+              // document.getElementById(self.options.id).remove();
+              // delete self.$layer.instances[self.options.id];
           }, self.options.time * 1000);
         },
         methods: {},
