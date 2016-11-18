@@ -1,8 +1,8 @@
 {
-    "name": "pzvue-button",
-    "version": "0.6.0",
-    "description": "vue button component",
-    "main": "./dist/pz-button.js",
+    "name": "pzvue-checkbox",
+    "version": "0.1.5",
+    "description": "vue checkbox component",
+    "main": "./dist/pz-checkbox.js",
     "scripts": {
         "build": "webpack --config webpack.config.js --colors"
     },

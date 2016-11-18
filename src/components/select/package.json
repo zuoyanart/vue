@@ -1,8 +1,8 @@
 {
-    "name": "pzvue-button",
-    "version": "0.6.0",
-    "description": "vue button component",
-    "main": "./dist/pz-button.js",
+    "name": "pzvue-select",
+    "version": "0.6.1",
+    "description": "vue select component",
+    "main": "./dist/pz-select.js",
     "scripts": {
         "build": "webpack --config webpack.config.js --colors"
     },

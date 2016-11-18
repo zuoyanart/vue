@@ -1,0 +1,118 @@
+@import "variables.scss";
+@import "mixin.scss";
+
+
+//button按钮生成工厂
+@mixin btn-css($bgcolor: $btn-primary-bgcolor) {
+  color: $btn-color;
+  background-color: $bgcolor;
+  @include border(darken($bgcolor,5%));
+
+  &.hover,&:hover {
+  	color:#fff;
+  	background-color: darken($bgcolor, 8%)
+  }
+
+  &:active,&.active {
+    color: #fff;
+    background-color: darken($bgcolor, 10%)
+  }
+  & > span.badge{
+    margin-left: 10px;
+    background-color: #fff;
+    color:$bgcolor;
+  }
+}
+
+//具体样式
+//---------------------------------------------
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 8px 12px;
+  margin-bottom: 0;
+  font-size: $btn-font-size;
+  min-width: 100px;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: top;
+  cursor: pointer;
+  background-color: $btn-bgcolor;
+  border: 1px solid #ccc;
+  @include border-radius(5px);
+
+  // Active & filled button styles
+  &:active,
+  &.active {
+    color: inherit; // Overriding the gloabl style for all anchors.
+    background-color: #ccc;
+  }
+
+  // Disabled styles & filled button active styles
+  &:disabled,
+  &.disabled {
+	  background-color: $bgcolor-disable;
+	  border:$border;
+	  color:$color-small;
+    cursor: not-allowed;
+	  &:hover{
+		  background-color: $bgcolor-disable;
+		  color:$color-small;
+	  }
+  }
+  & > i{
+    margin-right: 5px;
+    font-size: 1.17em;
+    vertical-align: baseline;
+  }
+}
+
+.btn-default {
+  @include btn-css(#f1f1f1);
+  color:#000;
+  &:hover{
+    color: #000;
+  }
+}
+.btn-primary {
+  @include btn-css($btn-primary-bgcolor);
+}
+
+.btn-success {
+   @include btn-css($bgcolor-success);
+}
+
+.btn-info {
+ 	@include btn-css($bgcolor-info);
+}
+
+.btn-warning {
+ 	@include btn-css($bgcolor-warning);
+}
+
+.btn-danger {
+ 	@include btn-css($bgcolor-danger);
+}
+
+.btn-mini{
+
+}
+
+.btn-small{
+  font-size: 12px;
+  min-width: 60px;
+  min-height: 30px;
+  padding:6px 8px;
+}
+
+.btn-large{
+
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+  padding:12px 8px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}

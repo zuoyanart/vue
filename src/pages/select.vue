@@ -22,8 +22,8 @@
 </template>
 
 <script>
-    import pzselect from '../components/select/index.js';
-    import pzbutton from '../components/button/index.js';
+    import pzselect from 'pzvue-select';
+    import pzbutton from 'pzvue-button';
 
     export default {
         data() {

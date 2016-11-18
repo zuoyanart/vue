@@ -1,13 +1,14 @@
 {
     "name": "vue-layer",
-    "version": "0.5.9",
+    "version": "0.5.10",
     "description": "vue layer",
     "main": "./dist/vue-layer.js",
     "scripts": {
         "build": "webpack --config webpack.config.js --colors"
     },
     "dependencies": {
-        "vue": "^2.0.0"
+        "vue": "^2.0.0",
+        "pzvue-button":"*"
     },
     "devDependencies": {
       "babel-core": "^6.11.4",

@@ -1,7 +1,6 @@
 
 
 <template lang="html">
-
 <div class="checkbox" :class="{disabled: disabled}">
     <input type="checkbox" :id="name + value" :name="name" :value="value"  :disabled="disabled" @change="chanegHandel" v-if="checked === 'true'"  checked="checked"/>
     <input type="checkbox" :id="name + value" :name="name" :value="value"  :disabled="disabled" @change="chanegHandel" v-if="checked === 'false'"/>
@@ -10,7 +9,6 @@
         <slot></slot>
     </label>
 </div>
-
 </template>
 
 <script>
@@ -51,8 +49,8 @@ export default {
         },
         methods: {
             chanegHandel: function(event) {
-              console.log(this.$parent._events);
-              console.log(this.$parent._events['b']);
+              // console.log(this.$parent._events);
+              // console.log(this.$parent._events['b']);
                 this._value = event.target.value;
                 this.$parent.$emit('checkChange', this._value, event.target.checked);
             }
@@ -66,3 +64,7 @@ export default {
 }
 
 </script>
+
+<style lang="scss">
+  @import "./css/checkbox.scss";
+</style>

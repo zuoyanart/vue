@@ -7,8 +7,8 @@ module.exports = {
     },
     output: {
         path: './dist',
-        library: 'vue-layer',
-        filename: 'vue-layer.js',
+        library: 'pz-button',
+        filename: 'pz-button.js',
         libraryTarget: 'umd'
     },
     resolve: {

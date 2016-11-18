@@ -7,8 +7,8 @@ module.exports = {
     },
     output: {
         path: './dist',
-        library: 'vue-layer',
-        filename: 'vue-layer.js',
+        library: 'pz-checkbox',
+        filename: 'pz-checkbox.js',
         libraryTarget: 'umd'
     },
     resolve: {

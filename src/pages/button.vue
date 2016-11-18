@@ -22,7 +22,7 @@
 
 <script>
 import validate from '../tools/validate.js';
-import pzbutton from '../components/button/index';
+import pzbutton from 'pzvue-button';
 import pzcheckbox from '../components/checkbox/index';
 import pzinput from '../components/input/index';
 import pzinputnumber from '../components/input-number/index';

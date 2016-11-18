@@ -11,7 +11,7 @@
 <script>
 import validate from '../tools/validate.js';
 import pzbutton from '../components/button/index';
-import pzcheckbox from '../components/checkbox/index';
+import pzcheckbox from 'pzvue-checkbox';
 import pzinput from '../components/input/index';
 import pzinputnumber from '../components/input-number/index';
 import pzradio from '../components/radio/index';

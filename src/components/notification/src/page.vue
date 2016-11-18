@@ -16,7 +16,7 @@
 
 <script>
 
-import pzbutton from 'button';
+import pzbutton from 'pzvue-button';
 export default {
     data() {
             return {

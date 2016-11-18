@@ -1,5 +1,5 @@
-<style lang="less">
-
+<style lang="scss">
+  @import "./css/button.scss";
 </style>
 
 <template lang="html">
