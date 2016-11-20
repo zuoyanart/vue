@@ -2,8 +2,8 @@
 
 <template lang="html">
 <div class="checkbox" :class="{disabled: disabled}">
-    <input type="checkbox" :id="name + value" :name="name" :value="value"  :disabled="disabled" @change="chanegHandel" v-if="checked === 'true'"  checked="checked"/>
-    <input type="checkbox" :id="name + value" :name="name" :value="value"  :disabled="disabled" @change="chanegHandel" v-if="checked === 'false'"/>
+    <input type="checkbox" :id="name + value" :name="name" :value="value"  :disabled="disabled" @change="chanegHandel" v-if="checked"  checked="checked"/>
+    <input type="checkbox" :id="name + value" :name="name" :value="value"  :disabled="disabled" @change="chanegHandel" v-else/>
     <label :for="name + value"></label>
     <label :for="name+value">
         <slot></slot>
@@ -16,7 +16,6 @@
 export default {
     data() {
             return {
-                _value: "",
                 check: false
             }
         },
@@ -33,26 +32,30 @@ export default {
                 default: 0
             },
             checked: {
-                type: String,
-                default: "false"
+                type: Boolean,
+                default: false
             },
             disabled: {
                 type: Boolean,
                 default: false
+            },
+            change: {
+              type: Function,
+              default: function(value, ischecked){}
             }
         },
         computed: {},
         mounted() {
-          if(this.checked == 'true'){
+          if(this.checked){
             this.check = true;
           }
         },
         methods: {
             chanegHandel: function(event) {
-              // console.log(this.$parent._events);
-              // console.log(this.$parent._events['b']);
-                this._value = event.target.value;
-                this.$parent.$emit('checkChange', this._value, event.target.checked);
+               if(!this.disabled) {
+                 this.change(this.value, event.target.checked);
+                 this.$parent.$emit('checkChange', this.value, event.target.checked);
+              }
             }
         },
         components: {},

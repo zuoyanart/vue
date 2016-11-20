@@ -6,8 +6,8 @@
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
-    "page" : "node build/build.js && cd ./dist && live-server --port=8081 ",
-    "ghpage" : "node build/build.js && cd dist && git add -A && git commit -m init && cd ../ && git subtree push -P dist origin gh-pages",
+    "page": "node build/build.js && cd ./dist && live-server --port=8081 ",
+    "ghpage": "node build/build.js && cd dist && git add -A && git commit -m init && cd ../ && git subtree push -P dist origin gh-pages",
     "build": "node build/build.js",
     "unit": "karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
@@ -15,8 +15,12 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
+    "pzvue-button": "^0.6.0",
+    "pzvue-checkbox": "^0.9.2",
+    "pzvue-select": "^0.6.1",
     "superagent": "^2.3.0",
     "vue": "^2.0.1",
+    "vue-layer": "^0.5.10",
     "vue-router": "^2.0.1"
   },
   "devDependencies": {

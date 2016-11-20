@@ -1,6 +1,6 @@
 {
     "name": "pzvue-checkbox",
-    "version": "0.1.5",
+    "version": "0.9.3",
     "description": "vue checkbox component",
     "main": "./dist/pz-checkbox.js",
     "scripts": {
