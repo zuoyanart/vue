@@ -8,7 +8,7 @@
     <h2>change事件</h2>
     <pzcheckbox name="c1" value="字符串值" :change="change">change事件</pzcheckbox>，打开控制台看输出
     <h2>切换状态</h2>
-    <pzcheckbox name="c1" value="5" :checked="checked">切换选中状态</pzcheckbox>
+    <pzcheckbox name="c1" value="5" :checked="checked" :change="change1">切换选中状态</pzcheckbox>
     <br>
     <br>
     <pzbutton @click.native="changeChecked">切换选中状态</pzbutton>
@@ -33,6 +33,10 @@ export default {
     },
     methods:{
       change: function(value, ischecked) {
+        console.log("值=" +value);
+        console.log("是否选中=" + ischecked);
+      },
+      change1: function(value, ischecked) {
         console.log("值=" +value);
         console.log("是否选中=" + ischecked);
       },

@@ -62,7 +62,13 @@ export default {
         watch: {
           check:function(){
               this.$parent.$emit('checkChange', this.value, true);
-            }
+            },
+          checked: function() {
+            if(!this.disabled) {
+              this.change(this.value, this.checked);
+              this.$parent.$emit('checkChange', this.value, this.checked);
+           }
+          }
         }
 }
 

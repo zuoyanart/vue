@@ -25,7 +25,7 @@ export default {
     methods: {
         'checkChange': function(msg, ischecked) {
             var index = this.value.indexOf(msg);
-            console.log("msg=" + msg);
+            // console.log("msg=" + msg);
             if (ischecked) { //true
                 if (index === -1) {
                     this.value.push(msg);
