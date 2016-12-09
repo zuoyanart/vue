@@ -9,7 +9,6 @@ console.log("layer=");
 console.log(layer);
 Vue.prototype.$layer = layer;
 // Vue.prototype.$layer = layer;
-
 const routes = [{
     path: '/',
     component: require("./pages/index.vue")

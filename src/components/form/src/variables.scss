@@ -1,0 +1,56 @@
+$namespace: "";
+//globle
+//----------------
+$font-family: Georgia, "Times New Roman", "Microsoft YaHei", "微软雅黑",STXihei, "华文细黑",serif;
+$font-size: 14px;
+$font-weight: 500;
+$line-height: 22px;
+$width: 1000px; //网站内容区宽度
+
+// font colors
+// -------------------------------------
+$color: #2f2725; //主体字体颜色
+$color-small: #898989; //网站日期时间的颜色,副标题颜色
+$color-a: #1b8ac2; //全站连接颜色
+
+/// bg colors
+$bgcolor: #fff;
+$bgcolor-disable: #e6ecf5;
+$bgcolor-success: #449d44; //绿色
+$bgcolor-info: #31b0d5; // 浅蓝
+$bgcolor-warning: #ec971f; //橙色
+$bgcolor-danger: #d9534f; //红色
+
+//表单验证
+$validate-border-color: $bgcolor-danger;
+
+//actions colors
+$color-a-hover: #005d9c;
+
+//border default
+$border-color: #c0c8c8;
+$border: 1px solid $border-color;
+// trunpage
+// ----------------------------------------------
+$page_margin_right: 20px;
+
+// form
+// -----------------------------------------------
+$input-width: 400px;
+$input-height: 30px;
+$input-font-size: 18px;
+$input-bg-color: #fff;
+$input-bg: #fff;
+$input-color: #ccc;
+$input-border-color: #c0c8c8;
+$input-border-focus: #66afe9;
+$input-placeholder-color: #999;
+$input-shadow-color: rgba(102, 175, 233, 0.6);
+
+// button
+// --------------------------------------------
+$btn-color: #fff;
+$btn-bgcolor: #ccc;
+$btn-bgcolor-hover: #58b4e6;
+$btn-font-size: 14px;
+$btn-primary-bgcolor: #286090;
