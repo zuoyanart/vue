@@ -4,7 +4,8 @@
     "description": "vue checkbox component",
     "main": "./dist/pz-checkbox.js",
     "scripts": {
-        "build": "webpack --config webpack.config.js --colors"
+        "build": "webpack --config webpack.config.js --colors",
+        "dev": "git push --set-upstream origin site"
     },
     "dependencies": {
         "vue": "^2.0.0"
