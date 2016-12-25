@@ -59,6 +59,7 @@ export default {
         methods: {
           handleChange(event) {
             this.$parent.$emit('pz.form.change', event.target.value);
+            // this.currentValue = event.target.value;
           },
           handleFocus(event) {
             this.$parent.$emit('pz.form.focus');
@@ -67,7 +68,11 @@ export default {
             this.$emit('input', event.target.value);
           }
         },
-        watch: {},
+        watch: {
+          value: function() {
+             this.$parent.$emit('pz.form.change', this.value);
+          }
+        },
         components: {}
 }
 

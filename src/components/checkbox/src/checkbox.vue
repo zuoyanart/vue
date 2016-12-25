@@ -1,7 +1,7 @@
 
 
 <template lang="html">
-<div class="checkbox" :class="{disabled: disabled}">
+<div class="checkbox" :class="{'disabled': disabled}">
     <input type="checkbox" :id="name + value" :name="name" :value="value"  :disabled="disabled" @change="chanegHandel" v-if="checked"  checked="checked"/>
     <input type="checkbox" :id="name + value" :name="name" :value="value"  :disabled="disabled" @change="chanegHandel" v-else/>
     <label :for="name + value"></label>
