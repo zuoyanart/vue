@@ -2,19 +2,19 @@ var utils = require('./utils');
 var webpack = require("webpack");
 module.exports = {
     entry: {
-      index: './src/checkbox.vue',
-      //  vendor: 'vue'
+      index: './index.js',
+      vendor: ['vue']
     },
     output: {
         path: 'dist',
-        library: 'pz-checkbox',
-        filename: 'pz-checkbox.js',
+        library: 'vue-layer',
+        filename: 'vue-layer.js',
         libraryTarget: 'umd'
     },
     resolve: {
         extensions: ['', '.js', '.vue'],
         alias: {
-            'vue$': 'vue/dist/vue'
+            'vue': 'vue/dist/vue'
         }
     },
     module: {

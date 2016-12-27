@@ -2,13 +2,13 @@ var utils = require('./utils');
 var webpack = require("webpack");
 module.exports = {
     entry: {
-      index: './src/checkbox.vue',
+      index: './src/checkbox-group.vue',
       //  vendor: 'vue'
     },
     output: {
         path: 'dist',
-        library: 'pz-checkbox',
-        filename: 'pz-checkbox.js',
+        library: 'pz-checkbox-group',
+        filename: 'pz-checkbox-group.js',
         libraryTarget: 'umd'
     },
     resolve: {
@@ -46,10 +46,6 @@ module.exports = {
         compress: {
           warnings: false
         }
-      }),
-      new webpack.ProvidePlugin({//打包第三方库
-            vue: 'vue'
-        }),
-        new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+      })
     ],
 }

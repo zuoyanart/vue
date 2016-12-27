@@ -4,7 +4,7 @@
 <div class="notify" @mousemove="move" @mouseup="moveEnd">
     <div class="notify-mask" @click="close"></div>
     <div :id="options.id + '_alert'" class="notify-main notify-alert" v-if="options.type == 0" :style="{left:options.offset[0] + 'px',top:options.offset[1] +'px', margin:options.offset[2]}">
-        <h2 class="title" @mousedown="moveStart">{{options.title}}</h2>
+        <h2 class="notice-title" @mousedown="moveStart">{{options.title}}</h2>
         <div class="notify-content">
             {{options.content}}
         </div>

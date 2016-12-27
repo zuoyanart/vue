@@ -4,7 +4,7 @@
 <div class="notify" @mousemove="move" @mouseup="moveEnd">
     <div class="notify-mask" @click="close"></div>
     <div :id="options.id + '_alert'" class="notify-main notify-alert notify-iframe"  :style="{left:options.offset[0] + 'px',top:options.offset[1] +'px', margin:options.offset[2],width:options.area[0], height:options.area[1]}">
-        <h2 class="title" @mousedown="moveStart">{{options.title}}</h2>
+        <h2 class="notice-title" @mousedown="moveStart">{{options.title}}</h2>
         <div class="notify-content" v-html="options.content"></div>
         <div class="notify-btns">
             <pzbutton btn="primary" @click.native="btnyes" size="small">确定</pzbutton>
