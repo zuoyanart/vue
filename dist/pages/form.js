@@ -20,7 +20,7 @@ define('pages/form.vue', function(require, exports, module) {
   
   var _pzvueInput2 = _interopRequireDefault(_pzvueInput);
   
-  var _pzvueRadio = require('pzvue-radio');
+  var _pzvueRadio = require('node_modules/pzvue-radio/dist/pz-radio');
   
   var _pzvueRadio2 = _interopRequireDefault(_pzvueRadio);
   
@@ -28,15 +28,13 @@ define('pages/form.vue', function(require, exports, module) {
   
   var _pzvueForm2 = _interopRequireDefault(_pzvueForm);
   
-  var _pzvueFormItem = require('pzvue-form-item');
+  var _pzvueFormitem = require('node_modules/pzvue-formitem/dist/pz-formitem');
   
-  var _pzvueFormItem2 = _interopRequireDefault(_pzvueFormItem);
+  var _pzvueFormitem2 = _interopRequireDefault(_pzvueFormitem);
   
-  var _pzvueCheckboxGroup = require('pzvue-checkbox-group');
+  // import pzcheckboxgroup from 'pzvue-checkbox-group';
   
-  var _pzvueCheckboxGroup2 = _interopRequireDefault(_pzvueCheckboxGroup);
-  
-  var _pzvueRadioGroup = require('pzvue-radio-group');
+  var _pzvueRadioGroup = require('node_modules/pzvue-radio-group/dist/pz-radio-group');
   
   var _pzvueRadioGroup2 = _interopRequireDefault(_pzvueRadioGroup);
   
@@ -66,11 +64,11 @@ define('pages/form.vue', function(require, exports, module) {
       pzbutton: _pzvueButton2['default'],
       pzcheckbox: _pzvueCheckbox2['default'],
       pzinput: _pzvueInput2['default'],
-      pzinputnumber: pzinputnumber,
+      // pzinputnumber,
       pzradio: _pzvueRadio2['default'],
       "pz-form": _pzvueForm2['default'],
-      "pz-formitem": _pzvueFormItem2['default'],
-      "pz-checkboxgroup": _pzvueCheckboxGroup2['default'],
+      "pz-formitem": _pzvueFormitem2['default'],
+      // "pz-checkboxgroup":pzcheckboxgroup,
       "pz-radiogroup": _pzvueRadioGroup2['default']
     },
     methods: {

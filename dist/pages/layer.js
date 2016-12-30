@@ -8,9 +8,9 @@ define('pages/layer.vue', function(require, exports, module) {
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
   
-  var _componentsButtonIndex = require('../components/button/index');
+  var _pzvueButton = require('node_modules/pzvue-button/dist/pz-button');
   
-  var _componentsButtonIndex2 = _interopRequireDefault(_componentsButtonIndex);
+  var _pzvueButton2 = _interopRequireDefault(_pzvueButton);
   
   var _toolsToolsJs = require('tools/tools');
   
@@ -21,7 +21,7 @@ define('pages/layer.vue', function(require, exports, module) {
           return {};
       },
       components: {
-          pzbutton: _componentsButtonIndex2['default']
+          pzbutton: _pzvueButton2['default']
       },
       methods: {
           submitHandle: function submitHandle() {

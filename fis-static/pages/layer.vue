@@ -41,7 +41,7 @@
 
 <script>
 
-import pzbutton from '../components/button/index';
+import pzbutton from 'pzvue-button';
 import tools from '../tools/tools.js';
 
 export default {

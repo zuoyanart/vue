@@ -16,12 +16,6 @@
 </template>
 
 <script>
-import pzbutton from 'pzvue-button';
-import pzcheckbox from 'pzvue-checkbox';
-import pzinput from 'pzvue-input';
-import pzform from 'pzvue-form';
-import pzformitem from 'pzvue-formitem';
-import pzselect from 'pzvue-select';
 
 export default {
   data(){
