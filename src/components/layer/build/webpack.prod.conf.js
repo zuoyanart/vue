@@ -3,7 +3,6 @@ var webpack = require("webpack");
 module.exports = {
     entry: {
       index: './index.js',
-      vendor: ['vue']
     },
     output: {
         path: 'dist',
@@ -14,7 +13,7 @@ module.exports = {
     resolve: {
         extensions: ['', '.js', '.vue'],
         alias: {
-            'vue': 'vue/dist/vue'
+            'vue$': 'vue/dist/vue'
         }
     },
     module: {
@@ -47,9 +46,9 @@ module.exports = {
           warnings: false
         }
       }),
-      new webpack.ProvidePlugin({//打包第三方库
-            vue: 'vue'
-        }),
-        new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+      // new webpack.ProvidePlugin({//打包第三方库
+      //       vue: 'vue'
+      //   }),
+        // new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js', Infinity),
     ],
 }

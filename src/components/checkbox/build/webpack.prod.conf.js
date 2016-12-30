@@ -47,9 +47,9 @@ module.exports = {
           warnings: false
         }
       }),
-      new webpack.ProvidePlugin({//打包第三方库
-            vue: 'vue'
-        }),
-        new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+      // new webpack.ProvidePlugin({//打包第三方库
+            // vue: 'vue'
+        // }),
+        // new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
     ],
 }
