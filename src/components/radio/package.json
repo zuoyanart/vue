@@ -1,8 +1,8 @@
 {
-    "name": "pzvue-input",
-    "version": "0.6.8",
-    "description": "vue input component",
-    "main": "./dist/pz-input.js",
+    "name": "pzvue-radio",
+    "version": "0.7.0",
+    "description": "vue radio component",
+    "main": "./dist/pz-radio.js",
     "scripts": {
       "build": "webpack --config ./build/webpack.prod.conf.js --colors",
       "dev": "node build/dev-server.js"
@@ -51,5 +51,5 @@
     "bugs": {
         "url": "https://github.com/zuoyanart/vue/issues"
     },
-    "homepage": "http://vue.zuoyan.space/#/component/input"
+    "homepage": "http://vue.zuoyan.space/#/component/radio"
 }
