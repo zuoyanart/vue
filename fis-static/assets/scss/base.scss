@@ -1,0 +1,33 @@
+//base style
+.clearfix:after {
+  display: block;
+  height: 0;
+  clear: both;
+  content: "\200B";
+}
+
+//翻页按钮样式
+.turnpage {
+  width: 100%;
+  height: 36px;
+  text-align: right;
+  .btn {
+    margin-left: 2px;
+  }
+  .number {
+    vertical-align: middle;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    &.choose {
+      color: $bgcolor-danger;
+    }
+  }
+  em {
+    color: $color-a;
+    font-family: 宋体;
+    vertical-align: 16%;
+  }
+}

@@ -1,0 +1,30 @@
+.tab{
+  width: 100%;
+  min-height: 100px;
+  & > ul{
+    height: 40px;
+    width: 100%;
+    clear: both;;
+    li{
+      min-width: 80px;
+      float:left;
+      height: 100%;
+      text-align: center;
+      cursor: pointer;
+      line-height: 40px;
+    }
+    li.active{
+      border-radius: 5px 5px 0 0;
+      border-top:1px solid #ccc;
+      border-left:1px solid #ccc;
+      background-color: #ccc;
+    }
+  }
+  & > .item {
+    width: 100%;
+    min-height: 50px;
+    border:1px solid #ccc;
+    display: none;
+    padding: 10px;
+  }
+}
