@@ -18,12 +18,12 @@
 }
 
 .main .right {
-  width: 502px;
+  width: 810px;
   float: left;
 }
 
 .main .right h2 {
-  margin: 20px 0 22px 0;
+  margin: 20px 0 22px;
   color: #00a0e9;
   font-weight: normal;
   font-size: 18px;

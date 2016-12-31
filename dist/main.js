@@ -27,6 +27,12 @@ define('main', function(require, exports, module) {
       path: '/',
       component: require("pages/index.vue")
   }, {
+      path: '/guid',
+      component: require('pages/guid.vue')
+  }, {
+      path: '/about',
+      component: require('pages/about.vue')
+  }, {
       path: '/component',
       component: require("pages/component.vue"),
       redirect: "/component/button",

@@ -1,6 +1,6 @@
 //由于使用了bower，有很多非必须资源。通过set project.files对象指定需要编译的文件夹和引用的资源
 // fis.set('project.files', ['page/**', 'map.json', 'modules/**', 'lib']);
-fis.set('project.ignore', ['*.bat', '*.rar', 'node_modules/**', 'fis-conf.js', "package.json", "*.sh"]);
+fis.set('project.ignore', ['*.bat', '*.rar', 'node_modules/**', 'fis-conf.js', "package.json", "*.sh","*.md"]);
 fis.set('project.fileType.text', 'es');
 
 fis.set('statics', '/'); //static目录
@@ -36,6 +36,11 @@ fis.match("**/*", {
         isMod: true,
         id: "$1",
         rExt: 'js'
+    })
+    .match("**/**.md", {
+      parser: fis.plugin("marked"),
+      rExt:'html',
+      release:false
     })
     .match("/lib/mod.js", {
       isMod: false

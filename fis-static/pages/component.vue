@@ -12,50 +12,50 @@
     <div class="right">
         <router-view></router-view>
     </div>
+    <div style="clear:both;"></div>
   </div>
 </template>
 
 <script>
-
 export default {
-  data(){
-    return {}
+    data() {
+        return {}
 
-  },
+    },
     components: {
 
     },
-    methods:{
+    methods: {
 
     }
 }
 </script>
 
 <style lang="scss">
-  .main{
-    width:1200px;
+.main {
+    width: 1200px;
     min-height: 800px;
     clear: both;
-    margin:20px auto;
-    .left{
-      width:200px;
-      float:left;
-      margin-top:10px;
-      a{
-        display: block;
-        margin:10px;
-        font-size: 16px;
-      }
+    margin: 20px auto;
+    .left {
+        width: 200px;
+        float: left;
+        margin-top: 10px;
+        a {
+            display: block;
+            margin: 10px;
+            font-size: 16px;
+        }
     }
-    .right{
-      width:502px;
-      float:left;
-      h2{
-        margin:20px 0 22px 0;
-        color: #00a0e9;
-        font-weight: normal;
-        font-size: 18px;
-      }
+    .right {
+        width: 810px;
+        float: left;
+        h2 {
+            margin: 20px 0 22px;
+            color: #00a0e9;
+            font-weight: normal;
+            font-size: 18px;
+        }
     }
-  }
+}
 </style>

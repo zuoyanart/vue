@@ -35,6 +35,9 @@
     <pzbutton  id="tips1" @click.native="tips1Handle">右</pzbutton>
     <pzbutton  id="tips2" @click.native="tips2Handle">下</pzbutton>
     <pzbutton  id="tips3" @click.native="tips3Handle">左-自定义样式</pzbutton>
+    <div class="markdown">
+      <link rel="import" href="/md/layer/1.md?__inline">
+    </div>
 </div>
 
 </template>
@@ -59,11 +62,6 @@ export default {
                 let self = this;
                 let id = this.$layer.confirm("确定要删除吗？", {
                     title: "警告"
-                }, async function() {
-                    let result = await tools.httpAgent('http://192.168.1.134:3004/v1/article/1', 'get');
-                    delete result.msg.content;
-                    document.getElementById("confirm").innerText = "ajax获取到的结果：" + JSON.stringify(result);
-                    self.$layer.close(id);
                 });
             },
             msgHandle: function() {

@@ -2,29 +2,41 @@
     <div>
         <h2>普通样式</h2>
         <pz-select :options="options" v-model="form.name" placeholder="不限">默认</pz-select>
-        <br>
         <br> value={{form.name}}
-
+        <div class="markdown">
+          <link rel="import" href="/md/select/1.md?__inline">
+        </div>
         <h2>自定义样式</h2>
         <pz-select :options="options1" v-model="form.select1">默认</pz-select>
         <br>
         <br> value={{form.select1}}
+        <div class="markdown">
+          <link rel="import" href="/md/select/2.md?__inline">
+        </div>
         <h2>带change事件</h2>
         <pz-select :options="options1" :change="change" :default="3">默认</pz-select>
         <br><br>
         <p id="change"></p>
+        <div class="markdown">
+          <link rel="import" href="/md/select/3.md?__inline">
+        </div>
         <h2>带change事件并动态改变选中的值</h2>
         <pz-select :options="options1" :change="change1" :default="defvalue">默认</pz-select>
         <br><br>
         <pz-button @click.native="changeValue">改变value(每秒点一次)</pz-button>
         <p id="change1"></p>
+        <div class="markdown">
+          <link rel="import" href="/md/select/4.md?__inline">
+        </div>
+        <div class="markdown">
+          <link rel="import" href="/md/select/5.md?__inline">
+        </div>
     </div>
 </template>
 
 <script>
     import pzselect from 'pzvue-select';
     import pzbutton from 'pzvue-button';
-
     export default {
         data() {
             return {
@@ -87,7 +99,7 @@
           },
           changeValue: function() {
             console.log("456sd");
-            this.defvalue = (Date.parse(new Date()) / 1000) % 4;
+            this.defvalue = (Date.parse(new Date()) / 1000) % 5;
           }
         }
     }

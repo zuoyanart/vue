@@ -19,6 +19,8 @@
     "pzvue-form": "^0.6.0",
     "pzvue-formitem": "^0.6.0",
     "pzvue-input": "^0.6.0",
+    "pzvue-radio": "^0.7.0",
+    "pzvue-radio-group": "^0.7.0",
     "pzvue-select": "^0.6.1",
     "pzvue-select-option": "^0.6.0",
     "superagent": "^3.0.0",
@@ -27,6 +29,7 @@
     "vue-router": "^2.0.3"
   },
   "devDependencies": {
-    "babel-polyfill": "^6.16.0"
+    "babel-polyfill": "^6.16.0",
+    "node-sass": "^4.1.1"
   }
 }

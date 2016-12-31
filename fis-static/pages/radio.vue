@@ -5,6 +5,9 @@
     <pzradio name="t1" value="1">选项2</pzradio>
     <pzradio name="t1" value="2">选项3</pzradio>
     <pzradio name="t1" value="3" :disabled="true">禁用</pzradio>
+    <div class="markdown">
+      <link rel="import" href="/md/radio/1.md?__inline">
+    </div>
   </div>
 </template>
 

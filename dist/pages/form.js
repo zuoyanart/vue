@@ -32,11 +32,11 @@ define('pages/form.vue', function(require, exports, module) {
   
   var _pzvueFormitem2 = _interopRequireDefault(_pzvueFormitem);
   
-  // import pzcheckboxgroup from 'pzvue-checkbox-group';
+  var _pzvueCheckboxGroup = require('node_modules/pzvue-checkbox-group/dist/pz-checkbox-group');
   
-  var _pzvueRadioGroup = require('node_modules/pzvue-radio-group/dist/pz-radio-group');
+  var _pzvueCheckboxGroup2 = _interopRequireDefault(_pzvueCheckboxGroup);
   
-  var _pzvueRadioGroup2 = _interopRequireDefault(_pzvueRadioGroup);
+  // import pzradiogroup from 'pzvue-radio-group';
   
   exports['default'] = {
     data: function data() {
@@ -67,10 +67,10 @@ define('pages/form.vue', function(require, exports, module) {
       // pzinputnumber,
       pzradio: _pzvueRadio2['default'],
       "pz-form": _pzvueForm2['default'],
-      "pz-formitem": _pzvueFormitem2['default'],
-      // "pz-checkboxgroup":pzcheckboxgroup,
-      "pz-radiogroup": _pzvueRadioGroup2['default']
+      "pz-formitem": _pzvueFormitem2['default']
     },
+    // "pz-checkboxgroup":pzcheckboxgroup,
+    // "pz-radiogroup":pzradiogroup,
     methods: {
       submitHandle: function submitHandle() {
         var ischeck;

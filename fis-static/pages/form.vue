@@ -45,8 +45,8 @@ import pzinput from 'pzvue-input';
 import pzradio from 'pzvue-radio';
 import pzform from 'pzvue-form';
 import pzformitem from 'pzvue-formitem';
-// import pzcheckboxgroup from 'pzvue-checkbox-group';
-import pzradiogroup from 'pzvue-radio-group';
+import pzcheckboxgroup from 'pzvue-checkbox-group';
+// import pzradiogroup from 'pzvue-radio-group';
 
 export default {
   data(){
@@ -79,7 +79,7 @@ export default {
         "pz-form":pzform,
         "pz-formitem":pzformitem,
         // "pz-checkboxgroup":pzcheckboxgroup,
-        "pz-radiogroup":pzradiogroup,
+        // "pz-radiogroup":pzradiogroup,
     },
     methods:{
       submitHandle: async function() {

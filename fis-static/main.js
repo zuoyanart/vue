@@ -10,6 +10,12 @@ const routes = [{
     path: '/',
     component: require("./pages/index.vue")
 }, {
+    path: '/guid',
+    component: require('./pages/guid.vue')
+}, {
+    path: '/about',
+    component: require('./pages/about.vue')
+}, {
     path: '/component',
     component: require("./pages/component.vue"),
     redirect: "/component/button",
@@ -32,11 +38,11 @@ const routes = [{
         path: 'form',
         name: 'form',
         component: require("./pages/form.vue")
-    },{
+    }, {
         path: 'select',
         name: 'select',
         component: require("./pages/select.vue")
-    },{
+    }, {
         path: 'layer',
         name: 'layer',
         component: require("./pages/layer.vue")
