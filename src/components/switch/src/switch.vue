@@ -1,24 +1,30 @@
+<style lang="scss">
+ @import "./switch.scss";
+</style>
+
 <template lang="html">
-  <div class="radio">
-      <input type="radio" :id="name + value" :name="name" :value="value" :checked="checked"/><label :for="name + value"></label><label :for="name+value"><slot></slot></label>
-  </div>
+   <span class="pz-switch" @click="change" :class="checkChoose">
+     <i></i>
+     <slot name="open" v-if="state"></slot>
+      <slot name="close" v-if="!state"></slot>
+   </span>
 </template>
+
 <script>
 export default {
   data () {
-    return {}
+    return {
+      state: this.checked//未选中
+    }
   },
   props: {
-    id: {
+    size: {
       type: String,
-      default: 'id'
+      default: ''
     },
-    name: {
-      type:String,
-      default: "name"
-    },
-    value: {
-      default: 0
+    disabled: {
+      type:Boolean,
+      default: false
     },
     checked: {
       type: Boolean,
@@ -26,13 +32,27 @@ export default {
     }
 
   },
-  computed: {},
-  mounted () {},
-  methods: {},
+  computed: {
+    checkChoose: function() {
+      return {
+        'pz-switch-active': this.state,
+        'pz-switch-disabled': this.disabled,
+        [`pz-switch-${this.size}`]: !!this.size
+      }
+    },
+  },
+  mounted () {
+
+  },
+  methods: {
+    change: function() {//改变切换状态
+      if(this.disabled) {
+        return;
+      }
+      this.state = !this.state;
+      this.$emit("change", this.state)
+    }
+  },
   components: {}
 }
 </script>
-
-<style lang="css">
-
-</style>
