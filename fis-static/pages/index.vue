@@ -13,7 +13,7 @@
     </div>
     </div>
     <div class="main-cnt">
-      <h1>放慢脚步，欣赏别人的风景</h1>
+      <h1>还不知道写啥</h1>
     </div>
   </div>
 </template>
