@@ -1,6 +1,6 @@
 {
   "name": "pzvue-inputnumber",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "vue inputnumber component",
   "main": "./dist/pz-inputnumber.js",
   "scripts": {
