@@ -1,7 +1,7 @@
 {
-  "name": "pzvue-checkbox",
-  "version": "0.9.8",
-  "description": "vue checkbox component",
+  "name": "pzvue-switch",
+  "version": "0.4.1",
+  "description": "vue switch component",
   "main": "./dist/pz-switch.js",
   "scripts": {
     "build": "webpack --config ./build/webpack.prod.conf.js --colors",

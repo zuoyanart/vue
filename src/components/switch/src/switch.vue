@@ -4,7 +4,6 @@
 
 <template lang="html">
    <span class="pz-switch" @click="change" :class="checkChoose">
-     <i></i>
      <slot name="open" v-if="state"></slot>
       <slot name="close" v-if="!state"></slot>
    </span>
@@ -30,7 +29,6 @@ export default {
       type: Boolean,
       default: false
     }
-
   },
   computed: {
     checkChoose: function() {
