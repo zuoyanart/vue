@@ -1,0 +1,21 @@
+.pz-timeline{
+  width: 100%;
+  min-height: 100px;
+  .pz-timeline-item {
+    position: relative;
+    .pz-timeline-dot{
+      width: 12px;
+      height: 12px;
+      border-radius: 12px;
+      border:1px solid #000;
+      display: inline-block;
+      top:0;
+      left:0;
+    }
+    .pz-timeline-line{
+      width: 1px;
+      height: 100%;
+      border-left:1px solid #ccc;
+    }
+  }
+}
