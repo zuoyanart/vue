@@ -1,7 +1,7 @@
-const PZInputNumber = require('./src/input-number');
+const PZinputnumber = require('./src/inputnumber');
 
-PZInputNumber.install = function(Vue) {
-  Vue.component(PZInputNumber.name, PZInputNumber);
+PZinputnumber.install = function(Vue) {
+  Vue.component('pz-inputnumber', PZinputnumber);
 };
 
-module.exports = PZInputNumber;
+module.exports = PZinputnumber;
