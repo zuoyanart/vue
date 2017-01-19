@@ -12,9 +12,9 @@
       </p>
     </div>
     </div>
-    <div class="main-cnt">
+    <!-- <div class="main-cnt">
       <h1>还不知道写啥</h1>
-    </div>
+    </div> -->
   </div>
 </template>
 

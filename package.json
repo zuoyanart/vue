@@ -6,14 +6,17 @@
   "scripts": {
     "dev": "cd ./dist && live-server --port=8781",
     "build": "cd ./fis-static && fis3 release -w -d ../dist",
-    "ghpage": "cd ./fis-static && fis3 release -w  -d ../dist && cd ../dist && git add -A && git commit -m init && cd ../ && git subtree push -P dist origin gh-pages"
+    "ghpage": "cd ./fis-static && fis3 release -d ../dist && cd ../dist && git subtree add --prefix=dist origin gh=pages && git subtree push -P dist origin gh-pages"
   },
   "dependencies": {
     "pzvue-button": "^0.6.0",
     "pzvue-checkbox": "^0.9.2",
+    "pzvue-inputnumber": "^0.4.2",
     "pzvue-radio": "^0.7.0",
     "pzvue-radio-group": "^0.7.0",
     "pzvue-select": "^0.6.1",
+    "pzvue-switch": "^0.4.1",
+    "pzvue-timeline": "^0.4.1",
     "superagent": "^2.3.0",
     "vue": "^2.0.1",
     "vue-layer": "^0.5.10",

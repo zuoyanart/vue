@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 import layer from 'vue-layer';
 
 Vue.use(VueRouter);
-Vue.prototype.$layer = layer;
+Vue.prototype.$layer = layer(Vue);
 // Vue.prototype.$layer = layer;
 const routes = [{
     path: '/',
@@ -15,6 +15,9 @@ const routes = [{
 }, {
     path: '/about',
     component: require('./pages/about.vue')
+}, {
+    path: '/change',
+    component: require('./pages/change.vue')
 }, {
     path: '/component',
     component: require("./pages/component.vue"),
