@@ -1,0 +1,61 @@
+@import "variables.scss";
+//单行显示
+.pz-form{
+    & > div.form-item {
+        position: relative;
+        margin-top: 20px;
+        padding: 0 0 0 100px;
+        &.form-iserror{
+          input,.checkbox-group,.radio-group{
+            border:1px solid $bgcolor-danger;
+          }
+        }
+        .validate-tip{
+          position:absolute;
+          top:-30px;
+          background-color: $bgcolor-warning;
+          color: #fff;
+          border-radius: 4px;
+          padding: 3px 5px;
+          &.validate-tip-err{
+            background-color: $bgcolor-danger;
+          }
+          min-height: 20px;
+        }
+        & > label {
+            display: inline-block;
+            width: 100px;
+            height: $input-height;
+            line-height: $input-height;
+            position: absolute;
+            left: 0;
+            text-align: right;
+            padding-right: 10px;
+            margin-bottom: 5px;
+        }
+        & > label.checkgroup,
+        label.radiogroup {
+            position: relative;
+            width: auto;
+        }
+    }
+    & > div:first-child {
+        margin-top: 0;
+    }
+    & > div.form-group {
+        display: inline-block;
+        padding: 0;
+        margin-top: 0;
+        vertical-align: middle;
+        & > input {
+            width: auto!important;
+        }
+        & > label {
+            margin: 0 0 3px;
+            position: relative;
+            left: 0;
+            padding: 0;
+            width: auto;
+        }
+    }
+}

@@ -1,0 +1,84 @@
+@import "./variables.scss";
+@font-face {
+  font-family: 'iconfont';  /* project id："184635" */
+  src: url('//at.alicdn.com/t/font_imzlg2x5bp47k3xr.eot');
+  src: url('//at.alicdn.com/t/font_imzlg2x5bp47k3xr.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_imzlg2x5bp47k3xr.woff') format('woff'),
+  url('//at.alicdn.com/t/font_imzlg2x5bp47k3xr.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_imzlg2x5bp47k3xr.svg#iconfont') format('svg');
+}
+
+.checkbox-group, .radio-group{
+  padding: 2px 8px;
+  border:1px solid #fff;
+  // & + .validate-tip {
+  //   position: relative!important;
+  //   display: block!important;
+  //   // bottom: -20px!important;
+  //   // top:0!important;
+  // }
+}
+//单选 复选按钮
+.checkbox-inline {
+    margin-right: 20px;
+    cursor: pointer;
+    padding-left: 20px;
+    position: relative;
+    vertical-align: middle;
+    & > input[type="checkbox"],
+    input[type="radio"] {
+        //
+        position: absolute;
+        margin-left: -20px;
+        top: 2px;
+    }
+}
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.input-lg {
+    height: 33px!important;
+    line-height: 33px!important;
+}
+//checkbox css
+.checkbox {
+    vertical-align: baseline;
+    display: inline;
+    margin-right: 10px;
+    & > input {
+        display: none;
+    }
+    label{
+      cursor: pointer;
+    }
+    & > input + label {
+        background-color: #fafafa;
+        border: 1px solid #cacece;
+        border-radius: 3px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 -15px 10px -12px rgba(0, 0, 0, 0.05) inset;
+        display: inline-block;
+        padding: 7px;
+        position: relative;
+        vertical-align: middle;
+        margin-right: 5px;
+        margin-top: -4px;
+        line-height: 16px!important;
+    }
+    & > input:checked + label::after {
+        font-family: "iconfont";
+        color: #99a1a7;
+        content: "\e62c";
+        font-size: 14px;
+        left: 0px;
+        top:-1px;
+        position: absolute;
+    }
+    &.disabled{
+      label{
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
+    }
+}

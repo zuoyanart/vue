@@ -1,0 +1,69 @@
+.pz-inputnumber{
+  width: 80px;
+  height: 32px;
+  display: inline-block;
+  position: relative;
+  &:hover{
+    .pz-inputnumber-up,.pz-inputnumber-down{
+      display: inline-block;
+    }
+  }
+  input{
+    width: 100%;
+    height: 100%;
+    padding: 6px 8px;
+    border: 1px solid #c0c8c8;
+    border-radius:3px;
+    background-color: #fff;
+    resize:none;
+    -webkit-appearance:none;
+    box-sizing: border-box;
+  }
+  .pz-inputnumber-up,.pz-inputnumber-down{
+     position: absolute;
+     top:1px;
+     right:1px;
+     width: 14px;
+     height: 14px;
+     display: inline-block;
+     color: #999;
+     border:1px solid #d7dde4;
+     cursor: pointer;
+     display: none;
+     font-size: 13px;
+     &:after{
+       position: absolute;
+       bottom:2px;
+       right: 1px;
+       content:"\e63c";
+     }
+  }
+  .pz-inputnumber-down{
+    top:inherit;
+    bottom:1px;
+    &:after{
+      top:2px;
+      bottom: inherit;
+      content:"\e63d";
+    }
+  }
+}
+.pz-inputnumber-larger{
+   width: 78px;
+   height: 36px;
+   .pz-inputnumber-up,.pz-inputnumber-down{
+     width: 16px;
+     height: 16px;
+   }
+}
+.pz-inputnumber-disabled{
+  cursor: not-allowed;
+  background-color: #f3f3f3;
+  color: #ccc;
+  opacity: 1;
+  input{
+    background-color: #f3f3f3;
+    cursor: not-allowed;
+  }
+
+}

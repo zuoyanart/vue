@@ -1,0 +1,51 @@
+.pz-timeline{
+  width: 100%;
+  min-height: 100px;
+  .pz-timeline-item:last-child{
+    .pz-timeline-line{
+      // display: none;
+    }
+    .pz-timeline-content{
+      min-height: 1px;
+    }
+  }
+  .pz-timeline-item {
+    position: relative;
+    .pz-timeline-dot{
+      width: 12px;
+      height: 12px;
+      border-radius: 12px;
+      border:1px solid #000;
+      display: inline-block;
+      top:0px;
+      left:0px;
+      z-index: 2;
+      position: absolute;
+      background-color: #fff;
+    }
+    .pz-timeline-line{
+      width: 1px;
+      height: 100%;
+      border-left:1px solid #ccc;
+      position: absolute;
+      left:5px;
+      top: 0px;
+      z-index: 1;
+    }
+    .pz-timeline-content{
+      padding:0px 20px;
+      position: relative;
+      min-height:50px;
+      top: -3px;
+      .tl-time{
+        font-weight: 700;
+        margin: 0;
+        font-size: 16px;
+      }
+      .tl-content{
+        line-height: 1.8em;
+        padding: 10px 6px;
+      }
+    }
+  }
+}
