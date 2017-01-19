@@ -1,7 +1,7 @@
-import Vue from 'vue';
-let NotificationConstructor = Vue.extend(require('./notification.vue'));
 
-let Notification = (function() {
+
+let Notification = (function(vue) {
+  let NotificationConstructor = vue.extend(require('./notification.vue'));
     let self = {};
     const defOptions = {
         type: 0, //0（信息框，默认）1（页面层）2（iframe层）3（加载层）4（tips层）
@@ -139,6 +139,9 @@ let Notification = (function() {
             if (options.icon < 0 || options.icon > 2) {
                 options.icon = 0;
             }
+            if (!options.time) {
+                options.time = 100;
+            }
             options.type = 3;
             return self.open(options);
         }
@@ -229,6 +232,6 @@ let Notification = (function() {
     }
 
     return self;
-}());
+});
 
 module.exports = Notification;

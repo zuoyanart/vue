@@ -4,7 +4,7 @@
 
 <template lang="html">
   <li class="pz-timeline-item">
-    <div class="pz-timeline-dot"></div>
+    <div class="pz-timeline-dot" :style="borderColor"></div>
     <div class="pz-timeline-line"></div>
     <div class="pz-timeline-content">
       <slot></slot>
@@ -20,25 +20,15 @@ export default {
     }
   },
   props: {
-    size: {
+    color: {
       type: String,
-      default: ''
-    },
-    disabled: {
-      type:Boolean,
-      default: false
-    },
-    checked: {
-      type: Boolean,
-      default: false
+      default: 'blue'
     }
   },
   computed: {
-    checkChoose: function() {
+    borderColor: function() {
       return {
-        'pz-timeline-active': this.state,
-        'pz-timeline-disabled': this.disabled,
-        [`pz-timeline-${this.size}`]: !!this.size
+        'border-color': this.color,
       }
     },
   },
@@ -46,13 +36,7 @@ export default {
 
   },
   methods: {
-    change: function() {//改变切换状态
-      if(this.disabled) {
-        return;
-      }
-      this.state = !this.state;
-      this.$emit("change", this.state)
-    }
+
   },
   components: {}
 }

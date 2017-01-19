@@ -2,7 +2,7 @@ var utils = require('./utils');
 var webpack = require("webpack");
 module.exports = {
     entry: {
-      index: './src/timeline.vue',
+      index: './index.js',
       //  vendor: 'vue'
     },
     output: {
@@ -24,6 +24,9 @@ module.exports = {
             },{
                 test: /\.js$/,
                 loader: 'babel',
+                query:{
+                  presets:['es2015']
+                },
                 exclude: /node_modules/
             },{
                test: /\.scss$/,
