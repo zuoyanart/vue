@@ -1,0 +1,244 @@
+@import "variables.scss";
+@import "mixin.scss";
+
+button,
+input,
+select,
+textarea {
+    font-family: $font-family;
+    font-family: 'STXihei', '\534E\6587\7EC6\9ED1', 'Microsoft YaHei', '\5FAE\8F6F\96C5\9ED1', 'SimSun', '\5B8B\4F53', 'Arial';
+    font-size: $font-size;
+    margin: 0;
+}
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+select,
+textarea {
+    width: 100%;
+    -webkit-appearance: none;
+    vertical-align: middle; //本身无意义，解决多余margin的浏览器bug
+    border: none;
+    outline: none;
+    resize: none;
+    padding: 6px 8px;
+    border: $border;
+    border-radius: 3px;
+    background-color: $input-bg;
+    &:focus {
+        border-color: $bgcolor-info;
+    }
+}
+select {
+    padding: 3px 8px;
+}
+//全局placeholder颜色
+.placeholder {
+    color: $input-placeholder-color;
+}
+input::-moz-placeholder {
+    font-size: 14px;
+    color: $input-placeholder-color;
+}
+input::-webkit-input-placeholder {
+    font-size: 14px;
+    color: $input-placeholder-color;
+}
+input::-ms-input-placeholder {
+    font-size: 14px;
+    color: $input-placeholder-color;
+}
+textarea {
+    height: auto;
+    line-height: 24px;
+    word-break: break-all;
+    margin: 0;
+    &:focus {
+        @include input-focus();
+    }
+}
+/********************class********************/
+.input {
+    display: table;
+    position: relative;
+    width: 100%;
+    &.input-larger {
+      height: 42px;
+      font-size: 16px;
+      input {
+        height: 42px;
+        font-size: 16px;
+      }
+    }
+    &.input-small {
+      height: 30px;
+      font-size: 13px;
+    }
+    &.input-mini {
+      height: 22px;
+      font-size: 12px;
+    }
+
+    .input-prepend {
+        display: table-cell;
+        height: 100%;
+        padding: 0 5px;
+        background: #f9fafc;
+        border: $border;
+        border-right: 0;
+        border-radius: 3px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        width: 1%;
+        & + input {
+            display: table-cell;
+            width: 100%;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+    .input-append {
+        display: table-cell;
+        height: 100%;
+        padding: 0 5px;
+        background: #f9fafc;
+        border: $border;
+        border-left: 0;
+        border-radius: 3px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        width: 1%;
+    }
+    input:not(:first-child):not(:last-child) {
+        border-radius: 0;
+    }
+    input:first-child:not(:last-child) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    i {
+        position: absolute;
+        font-size: 18px;
+        right: 13px;
+        top: 7px;
+        + input {
+            padding-right: 35px;
+        }
+    }
+    &.disabled {
+        input {
+            background-color: #eff2f7;
+            cursor: not-allowed;
+            color: #bbb;
+        }
+    }
+}
+
+
+
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.input-lg {
+    height: 33px!important;
+    line-height: 33px!important;
+}
+//select css
+.btn-select {
+    width: 240px;
+    height: 34px;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    background: $input-bg;
+    outline: none;
+    // border-radius: 3px;
+    &:hover{
+      input {
+        border: 1px solid $bgcolor-info;
+      }
+    }
+    .select-button {
+        width: 90%;
+        height: 24px;
+        border: none;
+        border-radius: 3px;
+        background: #fff;
+        cursor: pointer;
+        padding: 0 26px 0 5px;
+        display: inline-block;
+        overflow: hidden;
+        text-align: left;
+        outline: none;
+        word-break: keep-all;
+        text-overflow: ellipsis;
+        position:absolute;
+        top:8px;
+        left:5px;
+        background-color: transparent;
+    }
+    .select-down {
+        position: absolute;
+        top: 50%;
+        margin-top: -3px;
+        right: 12px;
+        height: 0;
+        width: 0;
+        overflow: hidden;
+        font-size: 0;
+        border-color: #333 transparent transparent transparent;
+        border-style: solid;
+        border-width: 6px;
+        z-index: 1000000;
+    }
+    .select-list {
+        width: 100%;
+        background: #fff;
+        border: 1px solid #e8e8e8;
+        box-shadow: 0 0 3px #ddd;
+        border-radius: 3px;
+        z-index: 2000000;
+        position: absolute;
+        left: -1px;
+        top: 35px;
+        overflow: hidden;
+    }
+    .select-list ul {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        line-height: 23px;
+        max-height: 240px;
+        position: relative;
+        z-index: 200000;
+        border:1px solid #ccc;
+    }
+    .select-list ul li {
+        width: auto;
+        height: 25px;
+        padding-left: 10px;
+        cursor: pointer;
+        overflow: hidden;
+        white-space: nowrap;
+        word-break: keep-all;
+        text-overflow: ellipsis;
+    }
+    .select-list ul li.selected,
+    .select-list ul li:hover {
+        background: $bgcolor-info;
+    }
+}
