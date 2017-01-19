@@ -1,0 +1,511 @@
+{
+    "res": {
+        "App.vue": {
+            "uri": "/App.js",
+            "type": "js",
+            "deps": [
+                "App.css"
+            ],
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "App.css": {
+            "uri": "/App.css",
+            "type": "css",
+            "aioPkg": "pkg/index.html_aio.css"
+        },
+        "assets/markdown.scss": {
+            "uri": "/assets/markdown.scss",
+            "type": "scss"
+        },
+        "assets/scss/badge.scss": {
+            "uri": "/assets/scss/badge.scss",
+            "type": "scss"
+        },
+        "assets/scss/base.scss": {
+            "uri": "/assets/scss/base.scss",
+            "type": "scss"
+        },
+        "assets/scss/button.scss": {
+            "uri": "/assets/scss/button.scss",
+            "type": "scss"
+        },
+        "assets/scss/content.scss": {
+            "uri": "/assets/scss/content.scss",
+            "type": "scss"
+        },
+        "assets/scss/font-awesome.scss": {
+            "uri": "/assets/scss/font-awesome.scss",
+            "type": "scss"
+        },
+        "assets/scss/font.scss": {
+            "uri": "/assets/scss/font.scss",
+            "type": "scss"
+        },
+        "assets/scss/form.scss": {
+            "uri": "/assets/scss/form.scss",
+            "type": "scss"
+        },
+        "assets/scss/grid.scss": {
+            "uri": "/assets/scss/grid.scss",
+            "type": "scss"
+        },
+        "assets/scss/icon.scss": {
+            "uri": "/assets/scss/icon.scss",
+            "type": "scss"
+        },
+        "assets/scss/ie8.scss": {
+            "uri": "/assets/scss/ie8.scss",
+            "type": "scss"
+        },
+        "assets/scss/mixin.scss": {
+            "uri": "/assets/scss/mixin.scss",
+            "type": "scss"
+        },
+        "assets/scss/notification.scss": {
+            "uri": "/assets/scss/notification.scss",
+            "type": "scss"
+        },
+        "assets/scss/pizza.scss": {
+            "uri": "/assets/scss/pizza.css",
+            "type": "css"
+        },
+        "assets/scss/reset.scss": {
+            "uri": "/assets/scss/reset.scss",
+            "type": "scss"
+        },
+        "assets/scss/tab.scss": {
+            "uri": "/assets/scss/tab.scss",
+            "type": "scss"
+        },
+        "assets/scss/var.scss": {
+            "uri": "/assets/scss/var.scss",
+            "type": "scss"
+        },
+        "assets/scss/variables.scss": {
+            "uri": "/assets/scss/variables.scss",
+            "type": "scss"
+        },
+        "assets/site.scss": {
+            "uri": "/assets/site.scss",
+            "type": "scss"
+        },
+        "components/World.vue": {
+            "uri": "/components/World.js",
+            "type": "js",
+            "deps": [
+                "components/World.css"
+            ]
+        },
+        "components/World.css": {
+            "uri": "/components/World.css",
+            "type": "css"
+        },
+        "lib/mod.js": {
+            "uri": "/lib/mod.js",
+            "type": "js",
+            "extras": {}
+        },
+        "main.js": {
+            "uri": "/main.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "main"
+            },
+            "deps": [
+                "node_modules/vue/dist/vue.min.js",
+                "App.vue",
+                "node_modules/vue-router/dist/vue-router.common.js",
+                "node_modules/vue-layer/dist/vue-layer.js",
+                "pages/index.vue",
+                "pages/guid.vue",
+                "pages/about.vue",
+                "pages/change.vue",
+                "pages/component.vue",
+                "pages/button.vue",
+                "pages/input.vue",
+                "pages/checkbox.vue",
+                "pages/radio.vue",
+                "pages/form.vue",
+                "pages/select.vue",
+                "pages/layer.vue"
+            ],
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "pages/about.vue": {
+            "uri": "/pages/about.js",
+            "type": "js",
+            "deps": [
+                "node_modules/pzvue-timeline/dist/pz-timeline.js"
+            ],
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "pages/button.vue": {
+            "uri": "/pages/button.js",
+            "type": "js",
+            "deps": [
+                "node_modules/pzvue-button/dist/pz-button.js"
+            ],
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "pages/change.vue": {
+            "uri": "/pages/change.js",
+            "type": "js",
+            "deps": [
+                "node_modules/pzvue-timeline/dist/pz-timeline.js"
+            ],
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "pages/checkbox.vue": {
+            "uri": "/pages/checkbox.js",
+            "type": "js",
+            "deps": [
+                "node_modules/pzvue-button/dist/pz-button.js",
+                "node_modules/pzvue-checkbox/dist/pz-checkbox.js",
+                "node_modules/pzvue-checkbox-group/dist/pz-checkbox-group.js"
+            ],
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "pages/component.vue": {
+            "uri": "/pages/component.js",
+            "type": "js",
+            "deps": [
+                "pages/component.css"
+            ],
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "pages/component.css": {
+            "uri": "/pages/component.css",
+            "type": "css",
+            "aioPkg": "pkg/index.html_aio.css"
+        },
+        "pages/design.vue": {
+            "uri": "/pages/design.js",
+            "type": "js"
+        },
+        "pages/form.vue": {
+            "uri": "/pages/form.js",
+            "type": "js",
+            "deps": [
+                "node_modules/pzvue-button/dist/pz-button.js",
+                "node_modules/pzvue-checkbox/dist/pz-checkbox.js",
+                "node_modules/pzvue-input/dist/pz-input.js",
+                "node_modules/pzvue-radio/dist/pz-radio.js",
+                "node_modules/pzvue-form/dist/pz-form.js",
+                "node_modules/pzvue-formitem/dist/pz-formitem.js",
+                "node_modules/pzvue-checkbox-group/dist/pz-checkbox-group.js"
+            ],
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "pages/guid.vue": {
+            "uri": "/pages/guid.js",
+            "type": "js",
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "pages/index.vue": {
+            "uri": "/pages/index.js",
+            "type": "js",
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "pages/input.vue": {
+            "uri": "/pages/input.js",
+            "type": "js",
+            "deps": [
+                "node_modules/pzvue-input/dist/pz-input.js"
+            ],
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "pages/layer.vue": {
+            "uri": "/pages/layer.js",
+            "type": "js",
+            "deps": [
+                "node_modules/pzvue-button/dist/pz-button.js",
+                "tools/tools.js",
+                "pages/layer.css"
+            ],
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "pages/layer.css": {
+            "uri": "/pages/layer.css",
+            "type": "css",
+            "aioPkg": "pkg/index.html_aio.css"
+        },
+        "pages/radio.vue": {
+            "uri": "/pages/radio.js",
+            "type": "js",
+            "deps": [
+                "node_modules/pzvue-radio/dist/pz-radio.js",
+                "node_modules/pzvue-radio-group/dist/pz-radio-group.js"
+            ],
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "pages/select.vue": {
+            "uri": "/pages/select.js",
+            "type": "js",
+            "deps": [
+                "node_modules/pzvue-select/dist/pz-select.js",
+                "node_modules/pzvue-button/dist/pz-button.js"
+            ],
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "tools/tools.js": {
+            "uri": "/tools/tools.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "tools/tools"
+            },
+            "deps": [
+                "node_modules/superagent/lib/client.js"
+            ],
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "node_modules/vue/dist/vue.min.js": {
+            "uri": "/node_modules/vue/dist/vue.min.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/vue/dist/vue.min"
+            },
+            "deps": [
+                "node_modules/process/browser.js"
+            ],
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "node_modules/vue-router/dist/vue-router.common.js": {
+            "uri": "/node_modules/vue-router/dist/vue-router.common.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/vue-router/dist/vue-router.common"
+            },
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "node_modules/vue-layer/dist/vue-layer.js": {
+            "uri": "/node_modules/vue-layer/dist/vue-layer.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/vue-layer/dist/vue-layer"
+            },
+            "deps": [
+                "node_modules/process/browser.js"
+            ],
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "node_modules/pzvue-timeline/dist/pz-timeline.js": {
+            "uri": "/node_modules/pzvue-timeline/dist/pz-timeline.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/pzvue-timeline/dist/pz-timeline"
+            },
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "node_modules/pzvue-button/dist/pz-button.js": {
+            "uri": "/node_modules/pzvue-button/dist/pz-button.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/pzvue-button/dist/pz-button"
+            },
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "node_modules/pzvue-checkbox/dist/pz-checkbox.js": {
+            "uri": "/node_modules/pzvue-checkbox/dist/pz-checkbox.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/pzvue-checkbox/dist/pz-checkbox"
+            },
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "node_modules/pzvue-checkbox-group/dist/pz-checkbox-group.js": {
+            "uri": "/node_modules/pzvue-checkbox-group/dist/pz-checkbox-group.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/pzvue-checkbox-group/dist/pz-checkbox-group"
+            },
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "node_modules/pzvue-input/dist/pz-input.js": {
+            "uri": "/node_modules/pzvue-input/dist/pz-input.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/pzvue-input/dist/pz-input"
+            },
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "node_modules/pzvue-radio/dist/pz-radio.js": {
+            "uri": "/node_modules/pzvue-radio/dist/pz-radio.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/pzvue-radio/dist/pz-radio"
+            },
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "node_modules/pzvue-form/dist/pz-form.js": {
+            "uri": "/node_modules/pzvue-form/dist/pz-form.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/pzvue-form/dist/pz-form"
+            },
+            "deps": [
+                "node_modules/process/browser.js"
+            ],
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "node_modules/pzvue-formitem/dist/pz-formitem.js": {
+            "uri": "/node_modules/pzvue-formitem/dist/pz-formitem.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/pzvue-formitem/dist/pz-formitem"
+            },
+            "deps": [
+                "node_modules/process/browser.js"
+            ],
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "node_modules/pzvue-radio-group/dist/pz-radio-group.js": {
+            "uri": "/node_modules/pzvue-radio-group/dist/pz-radio-group.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/pzvue-radio-group/dist/pz-radio-group"
+            },
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "node_modules/pzvue-select/dist/pz-select.js": {
+            "uri": "/node_modules/pzvue-select/dist/pz-select.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/pzvue-select/dist/pz-select"
+            },
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "node_modules/superagent/lib/client.js": {
+            "uri": "/node_modules/superagent/lib/client.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/superagent/lib/client"
+            },
+            "deps": [
+                "node_modules/component-emitter/index.js",
+                "node_modules/superagent/lib/request-base.js",
+                "node_modules/superagent/lib/is-object.js",
+                "node_modules/superagent/lib/is-function.js",
+                "node_modules/superagent/lib/response-base.js"
+            ],
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "node_modules/process/browser.js": {
+            "uri": "/node_modules/process/browser.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/process/browser"
+            },
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "node_modules/component-emitter/index.js": {
+            "uri": "/node_modules/component-emitter/index.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/component-emitter/index"
+            },
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "node_modules/superagent/lib/request-base.js": {
+            "uri": "/node_modules/superagent/lib/request-base.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/superagent/lib/request-base"
+            },
+            "deps": [
+                "node_modules/superagent/lib/is-object.js"
+            ],
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "node_modules/superagent/lib/is-object.js": {
+            "uri": "/node_modules/superagent/lib/is-object.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/superagent/lib/is-object"
+            },
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "node_modules/superagent/lib/is-function.js": {
+            "uri": "/node_modules/superagent/lib/is-function.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/superagent/lib/is-function"
+            },
+            "deps": [
+                "node_modules/superagent/lib/is-object.js"
+            ],
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "node_modules/superagent/lib/response-base.js": {
+            "uri": "/node_modules/superagent/lib/response-base.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/superagent/lib/response-base"
+            },
+            "deps": [
+                "node_modules/superagent/lib/utils.js"
+            ],
+            "aioPkg": "pkg/index.html_aio.js"
+        },
+        "node_modules/superagent/lib/utils.js": {
+            "uri": "/node_modules/superagent/lib/utils.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "node_modules/superagent/lib/utils"
+            },
+            "aioPkg": "pkg/index.html_aio.js"
+        }
+    },
+    "pkg": {
+        "pkg/index.html_aio.js": {
+            "type": "js",
+            "uri": "/pkg/index.html_aio.js",
+            "has": [
+                "node_modules/process/browser.js",
+                "node_modules/vue/dist/vue.min.js",
+                "App.vue",
+                "node_modules/vue-router/dist/vue-router.common.js",
+                "node_modules/vue-layer/dist/vue-layer.js",
+                "pages/index.vue",
+                "pages/guid.vue",
+                "node_modules/pzvue-timeline/dist/pz-timeline.js",
+                "pages/about.vue",
+                "pages/change.vue",
+                "pages/component.vue",
+                "node_modules/pzvue-button/dist/pz-button.js",
+                "pages/button.vue",
+                "node_modules/pzvue-input/dist/pz-input.js",
+                "pages/input.vue",
+                "node_modules/pzvue-checkbox/dist/pz-checkbox.js",
+                "node_modules/pzvue-checkbox-group/dist/pz-checkbox-group.js",
+                "pages/checkbox.vue",
+                "node_modules/pzvue-radio/dist/pz-radio.js",
+                "node_modules/pzvue-radio-group/dist/pz-radio-group.js",
+                "pages/radio.vue",
+                "node_modules/pzvue-form/dist/pz-form.js",
+                "node_modules/pzvue-formitem/dist/pz-formitem.js",
+                "pages/form.vue",
+                "node_modules/pzvue-select/dist/pz-select.js",
+                "pages/select.vue",
+                "node_modules/component-emitter/index.js",
+                "node_modules/superagent/lib/is-object.js",
+                "node_modules/superagent/lib/request-base.js",
+                "node_modules/superagent/lib/is-function.js",
+                "node_modules/superagent/lib/utils.js",
+                "node_modules/superagent/lib/response-base.js",
+                "node_modules/superagent/lib/client.js",
+                "tools/tools.js",
+                "pages/layer.vue",
+                "main.js"
+            ]
+        },
+        "pkg/index.html_aio.css": {
+            "type": "js",
+            "uri": "/pkg/index.html_aio.css",
+            "has": [
+                "App.css",
+                "pages/component.css",
+                "pages/layer.css"
+            ]
+        }
+    }
+}

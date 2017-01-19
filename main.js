@@ -4,7 +4,7 @@ define('main', function(require, exports, module) {
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
   
-  var _vue = require('node_modules/vue/dist/vue');
+  var _vue = require('node_modules/vue/dist/vue.min');
   
   var _vue2 = _interopRequireDefault(_vue);
   
