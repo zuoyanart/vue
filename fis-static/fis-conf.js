@@ -11,7 +11,7 @@ fis.hook('commonjs', {
     mod: 'amd',
     extList: ['.js', '.jsx', '.es', '.ts', '.tsx','vue'],
     paths: {
-        "vue": '/node_modules/vue/dist/vue.js',
+        "vue": '/node_modules/vue/dist/vue.min.js',
         "process/browser": '/node_modules/process/browser.js',
     }
 });
@@ -110,10 +110,10 @@ fis.match('::packager', {
     postpackager: fis.plugin('loader', {
         resourceType: 'mod',
         obtainScript: true,
-        // allInOne: {
-        //     ignore: ["/widget/kindeditor-4.1.10/kindeditor.js", "/widget/kindeditor-4.1.10/lang/zh_CN.js", '/lib/ejs.js'],
-        //     includeAsyncs: false //不包含异步依赖
-        // },
+        allInOne: {
+            // ignore: ["/widget/kindeditor-4.1.10/kindeditor.js", "/widget/kindeditor-4.1.10/lang/zh_CN.js", '/lib/ejs.js'],
+            includeAsyncs: false //不包含异步依赖
+        },
         useInlineMap: true, // 资源映射表内嵌
     }),
     packager: fis.plugin('map', {

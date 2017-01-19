@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "cd ./dist && live-server --port=8781",
     "build": "cd ./fis-static && fis3 release -w -d ../dist",
-    "subtree": "git remote add -f gh-pages https://github.com/zuoyanart/vue.git && git subtree add --prefix=dist vue gh-pages ",
-    "ghpage": "cd ./fis-static && fis3 release -d ../dist && cd ../dist && git subtree add --prefix=dist origin gh=pages && git subtree push -P dist origin gh-pages"
+    "subtree": "git remote add -f gh-pages https://github.com/zuoyanart/vue.git && git subtree add --prefix=dist origin gh-pages ",
+    "ghpage": "cd ./fis-static && fis3 release -d ../dist && cd ../ && git subtree push --prefix dist origin gh-pages",
+    "ghpage-pull": "git subtree pull --prefix dist origin gh-pages"
   },
   "dependencies": {
     "pzvue-button": "^0.6.0",
