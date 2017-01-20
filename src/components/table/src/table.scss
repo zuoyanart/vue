@@ -1,0 +1,41 @@
+.pz-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+    // border-color:#e3e8ee;
+    // border-width: 1px;
+    // border-style: solid;
+    tbody tr {
+        background-color: #fff;
+
+        &:hover {
+            background-color: #ebf7ff;
+        }
+    }
+
+    td,
+    th {
+        text-align: center;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #e3e8ee;
+    }
+
+    th {
+        height: 40px;
+        min-width: 0;
+        font-weight: bold;
+        background-color: #eef1f6;
+    }
+    td {
+        height: 48px;
+    }
+    .pz-table-action {
+      a,button{
+        margin: 0 5px;
+      }
+        button {
+            vertical-align: middle;
+        }
+    }
+}

@@ -29,10 +29,10 @@ in template
 <pzbutton icon="user-md" btn="success">成功</pzbutton>
 <pzbutton icon="user-md" btn="info">一般信息</pzbutton>
 <pzbutton btn="danger" :loading="true">危险</pzbutton>
-<h2>块级样式</h2>
+<h2>尺寸样式</h2>
 <pzbutton icon="user-md" size="block">默认</pzbutton>
-<pzbutton icon="user-md" btn="success" size="block">成功</pzbutton>
-<pzbutton icon="user-md" btn="info" size="block">一般信息</pzbutton>
+<pzbutton icon="user-md" btn="success" size="small">成功</pzbutton>
+<pzbutton icon="user-md" btn="info" size="larger">一般信息</pzbutton>
 <pzbutton btn="danger" :loading="true" size="block">危险</pzbutton>
 ```
 

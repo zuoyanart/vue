@@ -4,7 +4,7 @@
 
 <template lang="html">
 
-<button :type="type" name="button" class="btn" :class="[
+<button  v-on:click="clickon" :type="type" name="button" class="btn" :class="[
     btn ? 'btn-' + btn : '',
     size ? 'btn-' + size : '',
     {
@@ -42,11 +42,15 @@ export default {
         icon: {
           type: String,
           default: ''
-        }
+        },
     },
     computed: {},
     mounted() {},
-    methods: {},
+    methods: {
+      clickon: function() {
+        this.$emit("click","");
+      }
+    },
     components: {}
 }
 

@@ -29,10 +29,10 @@
 .btn {
   position: relative;
   display: inline-block;
-  padding: 8px 12px;
+  padding: 6px 10px;
   margin-bottom: 0;
   font-size: $btn-font-size;
-  min-width: 100px;
+  min-width: 10px;
   text-align: center;
   white-space: nowrap;
   vertical-align: top;
@@ -100,13 +100,14 @@
 
 .btn-small{
   font-size: 12px;
-  min-width: 60px;
-  min-height: 30px;
-  padding:6px 8px;
+  min-width: 31px;
+  min-height: 14px;
+  padding:6px 9px;
 }
 
 .btn-large{
-
+  padding: 6px 15px 7px;
+  font-size: 14px;
 }
 
 .btn-block {
