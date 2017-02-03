@@ -8,9 +8,7 @@
       <slot name="prepend"></slot>
     </div>
     <i :class="'icon-' + icon" v-if="icon !== ''"></i>
-    <input v-if="type==='text'" type="text" :name="id" :value="value" :id="id" :placeholder="placeholder" :disabled="disabled"  @change="handleChange" @blur="handleChange" @focus="handleFocus" @input="input">
-    <input v-if="type==='email'" type="email" :name="id" :value="value" :id="id" :placeholder="placeholder" :disabled="disabled" >
-    <input v-if="type==='number'" type="number" :name="id" :value="value" :id="id" :placeholder="placeholder" :disabled="disabled" >
+    <input  :type="type" :name="id" :value="value" :id="id" :placeholder="placeholder" :disabled="disabled"  @change="handleChange" @blur="handleChange" @focus="handleFocus" @input="input">
     <div class="input-append" v-if="$slots.append">
       <slot name="append"></slot>
     </div>
