@@ -69,9 +69,19 @@ export default {
             });
         },
         loading1Handle: function() {
+          let self = this;
             let id = this.$layer.loading(1, {
-                time: 2
+                time:2
             });
+            setTimeout(function() {
+              self.$layer.close(id);
+            },1000);
+            let id1 = this.$layer.loading(2, {
+                time: 5
+            });
+            setTimeout(function() {
+              self.$layer.close(id1);
+            },2000);
         },
         loading2Handle: function() {
             let id = this.$layer.loading(2, {

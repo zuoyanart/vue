@@ -1,6 +1,6 @@
 {
     "name": "pzvue-button",
-    "version": "0.6.1",
+    "version": "0.6.10",
     "description": "vue button component",
     "main": "./dist/pz-button.js",
     "scripts": {
