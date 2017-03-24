@@ -171,13 +171,19 @@ let Notification = (function(vue) {
      * @return {[type]}    [description]
      */
     self.close = function(id) {
-        setTimeout(function() {
+        let oElm = document.getElementById(id);
+        if (oElm) {
+            oElm.remove();
             delete self.instances[id];
-            let oElm = document.getElementById(id);
-            if (oElm) {
-                oElm.remove();
-            }
-        }, 200);
+        } else {
+            setTimeout(function() {
+              let oElm = document.getElementById(id);
+              if (oElm) {
+                  oElm.remove();
+                  delete self.instances[id];
+                }
+            }, 200);
+        }
     }
     /**
      * 关闭一个弹窗
